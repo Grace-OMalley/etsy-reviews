@@ -1,17 +1,42 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "guitarcentre-master",
+  "description": "> Project description",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "react-dev": "webpack -d source-map --watch",
+    "server-dev": "nodemon server/index.js"
   },
   "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.4",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "install": "^0.13.0",
+    "npm": "^7.11.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grace-OMalley/guitarcentre-master.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Grace-OMalley/guitarcentre-master/issues"
+  },
+  "homepage": "https://github.com/Grace-OMalley/guitarcentre-master#readme"
 }
