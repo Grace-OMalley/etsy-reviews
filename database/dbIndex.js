@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/reviews');
+var faker = require('faker');
+
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   // we're connected!
 });
-
-var faker = require('faker');
-
-
 
 const productSchema = new mongoose.Schema({
   overallRating: Number,
