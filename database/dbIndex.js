@@ -69,6 +69,12 @@ const populateData = () => {
   // move on to next product
 }
 
-populateData();
+// populateData();
+
+const getProduct = () => {
+  return Product.findOne({"reviews.10": {"$exists": true}});
+}
 
 // module.exports.generateData = generateData;
+module.exports.getProduct = getProduct;
+
