@@ -1,7 +1,9 @@
-#app {
-  background-color: cornflowerblue;
+.outer-reviews-col {
+  outline: solid black;
+
 }
 
-body {
-  background-color: black;
+.reviews-col * {
+  outline: solid black;
+  outline-width: thin;
 }
