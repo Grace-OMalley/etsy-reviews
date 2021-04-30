@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles/Rating.module.css';
 
 class Rating extends React.Component {
   constructor(props) {
@@ -13,9 +14,9 @@ class Rating extends React.Component {
 
   render() {
     return (
-      <div className="rating-container">
+      <div className={styles.ratingContainer}>
         {/* This is the Rating div! */}
-        <div className="rating-display" css="margin-bottom-12px">
+        <div className={styles.ratingDisplay} css="margin-bottom-12px">
           <div className="rating-div">
             <h3>{this.props.product.itemReviewsQuant} reviews</h3>
             <span css="box-sizing-border-box">

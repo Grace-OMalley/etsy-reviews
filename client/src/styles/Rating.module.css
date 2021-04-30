@@ -1,0 +1,20 @@
+.ratingContainer {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.ratingDisplay {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.ratingDiv {
+  display: flex;
+  align-items: center !important;
+
+
+
+}
