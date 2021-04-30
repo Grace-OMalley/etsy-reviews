@@ -17,7 +17,7 @@ class Tabs extends React.Component {
       <div className="tabs-container" css="margin-bottom-18px">
 
       <div className="tabs-list">
-        This is the Tabs div!
+        {/* This is the Tabs div! */}
         <button>listing reviews tab--span goes in here</button>
         <button>shop reviews tab--span goes in here</button>
       </div>

@@ -15,9 +15,8 @@ class ReviewsList extends React.Component {
 
   render() {
     return (
-
       <div className={styles.test}>
-        --> ReviewItem component goes here
+        {/* --> ReviewItem component goes here */}
         {this.state.reviews.map((review, i) => {
         return <ReviewItem review={review} key={i} />
       })}

@@ -36,22 +36,20 @@ class App extends React.Component {
 
     return (
       <div className={styles.outerCol}>
-        Outermost col
+        {/* Outermost col */}
         <div className={styles.innerCol} css="padding-left-30px">
-          inner reviews col
+          {/* inner reviews col */}
           <div className={styles.reviewsPanel}>
-            reviews panel--encompasses reviews AND photo bank
+            {/* reviews panel--encompasses reviews AND photo bank */}
             <div className="listing-page-reviews">
-              <p>does NOT encompass photo bank</p>
-
+              {/* <p>does NOT encompass photo bank</p> */}
               {this.state.currentProduct !== null ? <Rating product={this.state.currentProduct}/> : null }
-
               <div className="data-reviews">
-                --> TABS COMPONENT GOES HERE
-                ... includes reviews for this item tab and reviews for this shop tab + sort feature
+                {/* --> TABS COMPONENT GOES HERE
+                ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
                 <Tabs />
                 <div className="reviews-list-container" css="margin-bottom-12px">
-                  --> REVIEWS LIST COMPONENT GOES HERE
+                  {/* --> REVIEWS LIST COMPONENT GOES HERE */}
                   {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews}/> : null }
                 </div>
               </div>
