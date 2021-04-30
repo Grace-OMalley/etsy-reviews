@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from './styles/ReviewsList.module.css';
+import ReviewItem from './ReviewItem.jsx';
 
 class ReviewsList extends React.Component {
   constructor(props) {
@@ -14,12 +16,14 @@ class ReviewsList extends React.Component {
   render() {
     return (
 
-      <div className="reviews-list">
+      <div className={styles.test}>
         --> ReviewItem component goes here
-        {this.props.reviews.map((review, i) => {
-        <ReviewItem review={review} id={i} />
+        {this.state.reviews.map((review, i) => {
+        return <ReviewItem review={review} key={i} />
       })}
       </div>
+
+      // <div className={styles.test}>This is the reviews list</div>
     )
   }
 }

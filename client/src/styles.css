@@ -1,9 +1,0 @@
-.outer-reviews-col {
-  outline: solid black;
-
-}
-
-.reviews-col * {
-  outline: solid black;
-  outline-width: thin;
-}

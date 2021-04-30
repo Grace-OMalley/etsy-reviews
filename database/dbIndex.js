@@ -11,8 +11,10 @@ db.once('open', function() {
 
 const productSchema = new mongoose.Schema({
   overallRating: Number,
+  itemReviewsQuant: String,
   reviews: [{
     userId: Number,
+    username: String,
     userPic: String,
     reviewDate: String,
     reviewBody: String,
@@ -31,25 +33,27 @@ const populateData = () => {
     console.log('rating value:', ratingValue);
 
     // create one product instance for each iteration
+    let reviewsQuantity = Math.floor( Math.random() * 20);
+    console.log('reviews quantity:', reviewsQuantity);
+
     let product = new Product({
       overallRating: ratingValue,
+      itemReviewsQuant: reviewsQuantity,
       reviews: []
     })
 
     // set up sub iteration for reviews
-    let reviewsQuantity = Math.floor( Math.random() * 20);
-    console.log('reviews quantity:', reviewsQuantity);
-
     // create 0-20 reviews for each product
     for (let i = 0; i < reviewsQuantity; i++) {
 
       // cast data for current review
       let review = {
-        userPic: faker.image.avatar(),
-        reviewDate: faker.date.soon(),
-        reviewBody: faker.lorem.paragraph(),
+        username: faker.internet.userName(),
+        userPic: faker.internet.avatar(),
+        reviewDate: faker.date.recent(),
+        reviewBody: faker.lorem.paragraphs(),
         starRating: ratingValue,
-        userProductImage: faker.image.image()
+        userProductImage: faker.commerce.product()
       }
 
       // push review to reviews array on product model

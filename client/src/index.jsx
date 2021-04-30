@@ -6,7 +6,7 @@ import PageNav from './PageNav.jsx';
 import Tabs from './Tabs.jsx';
 import Rating from './Rating.jsx';
 import $ from 'jquery';
-import "./styles.css";
+import styles from "./styles/index.module.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class App extends React.Component {
       type: 'GET',
       url: '/findOne',
       success: (product) => {
-        console.log('successfully retreved:', product);
+        console.log('successfully retrieved:', product);
         this.setState({
           currentProduct: product
         })
@@ -33,27 +33,35 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
-      <div className="outer-reviews-col">
-        Outermost col (margin right)
-        <div className="inner-reviews-col" css="padding-left-30px">
+      <div className={styles.outerCol}>
+        Outermost col
+        <div className={styles.innerCol} css="padding-left-30px">
           inner reviews col
-          <div className="reviews-panel">
-            --> RATING COMPONENT GOES HERE
-            ...includes overall rating and statement
-          </div>
-          <div className="data-reviews">
-            data reviews panel--loader will overlay this div
-            <div>
-              --> TABS COMPONENT GOES HERE
-              ... includes reviews for this item tab and reviews for this shop tab + sort feature
+          <div className={styles.reviewsPanel}>
+            reviews panel--encompasses reviews AND photo bank
+            <div className="listing-page-reviews">
+              <p>does NOT encompass photo bank</p>
+
+              {this.state.currentProduct !== null ? <Rating product={this.state.currentProduct}/> : null }
+
+              <div className="data-reviews">
+                --> TABS COMPONENT GOES HERE
+                ... includes reviews for this item tab and reviews for this shop tab + sort feature
+                <Tabs />
+                <div className="reviews-list-container" css="margin-bottom-12px">
+                  --> REVIEWS LIST COMPONENT GOES HERE
+                  {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews}/> : null }
+                </div>
+              </div>
+
+              <div className="nav-container">
+                --> PAGE NAV COMPONENT GOES HERE
+              </div>
             </div>
-          </div>
-          <div className="reviews-list-container">
-            --> REVIEWS LIST COMPONENT GOES HERE
-          </div>
-          <div className="nav-container">
-            --> PAGE NAV COMPONENT GOES HERE
+
+            PHOTO BANK HERE
           </div>
 
         </div>
