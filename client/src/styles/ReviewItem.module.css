@@ -1,0 +1,96 @@
+.reviewItem {
+  flex-grow: 1;
+  flex-basis: 100%;
+  max-width: 100%;
+  padding: 9px;
+  box-sizing: inherit;
+  /* height: 200px; */
+  outline: solid black;
+  outline-width: thin;
+}
+
+.userDate {
+  margin-bottom: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 30px;
+}
+
+.profileContainer {
+  height: 36px;
+  width: 36px;
+  margin-right: 12px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.profilePic {
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 0;
+  margin-right: 12px !important;
+}
+
+.usernameDate {
+  display: flex !important;
+  align-content: space-between !important;
+}
+
+.usernameDate > p {
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: underline;
+  transition: opacity 200ms ease-out;
+  position: relative;
+  z-index: 0;
+  background: transparent;
+  margin-right: 6px !important;
+}
+
+.bodyContainer {
+  padding-left: 48px !important;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.innerBodyContainer {
+  margin-bottom: 6px !important;
+}
+
+.innerContainer {
+  max-width: 100% !important;
+  min-width: 0px !important;
+  margin-right: 48px !important;
+  flex: 3 1 0% !important;
+}
+
+.starsContainer {
+  margin-bottom: 6px !important;
+}
+
+.starsSpan {
+  margin-right: 6px !important;
+  display: inline-block !important;
+  box-sizing: border-box;
+}
+
+.starsSpan > span {
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: middle;
+  bottom: 1px !important;
+  margin: 0px 1px;
+}
+

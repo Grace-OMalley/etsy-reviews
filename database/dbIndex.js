@@ -48,7 +48,7 @@ const populateData = () => {
 
       // cast data for current review
       let review = {
-        username: faker.internet.userName(),
+        username: faker.name.firstName() + ' ' + faker.name.lastName(),
         userPic: faker.internet.avatar(),
         reviewDate: faker.date.recent(),
         reviewBody: faker.lorem.paragraphs(),
@@ -73,7 +73,7 @@ const populateData = () => {
   // move on to next product
 }
 
-// populateData();
+populateData();
 
 const getProduct = () => {
   return Product.findOne({"reviews.10": {"$exists": true}});

@@ -1,0 +1,11 @@
+.reviewsContainer {
+  margin-bottom: 12px !important;
+  padding-left: 0px !important;
+}
+
+.gridBlock {
+  margin: -9px;
+  display: flex !important;
+  flex-wrap: wrap;
+  margin-bottom: 0px !important;
+}

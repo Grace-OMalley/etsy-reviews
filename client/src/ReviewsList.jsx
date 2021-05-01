@@ -15,14 +15,14 @@ class ReviewsList extends React.Component {
 
   render() {
     return (
-      <div className={styles.test}>
-        {/* --> ReviewItem component goes here */}
-        {this.state.reviews.map((review, i) => {
-        return <ReviewItem review={review} key={i} />
-      })}
+      <div className={styles.reviewsContainer}>
+        <div className={styles.gridBlock}>
+            {/* --> ReviewItem component goes here */}
+            {this.state.reviews.map((review, i) => {
+            return <ReviewItem review={review} key={i} />
+          })}
+        </div>
       </div>
-
-      // <div className={styles.test}>This is the reviews list</div>
     )
   }
 }

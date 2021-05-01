@@ -29,7 +29,6 @@ class App extends React.Component {
         })
       }
     })
-
   }
 
   render() {
@@ -48,10 +47,10 @@ class App extends React.Component {
                 {/* --> TABS COMPONENT GOES HERE
                 ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
                 <Tabs />
-                <div className="reviews-list-container" css="margin-bottom-12px">
-                  {/* --> REVIEWS LIST COMPONENT GOES HERE */}
-                  {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews}/> : null }
-                </div>
+
+                {/* --> REVIEWS LIST COMPONENT GOES HERE */}
+                {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews}/> : null }
+
               </div>
 
               <div className="nav-container">

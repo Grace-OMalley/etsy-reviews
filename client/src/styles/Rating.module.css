@@ -72,6 +72,9 @@ p {
 
 .iconContainer {
   margin: 0;
+  box-sizing: border-box;
+  margin-top: 1px;
+  margin-bottom: -4px;
 }
 
 .iconSpan {
