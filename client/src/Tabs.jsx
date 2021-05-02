@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles/Tabs.module.css';
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -14,12 +15,12 @@ class Tabs extends React.Component {
   render() {
     return (
 
-      <div className="tabs-container" css="margin-bottom-18px">
+      <div className={styles.tabsContainer} css="tabs-container">
 
-      <div className="tabs-list">
+      <div className={styles.tabsList} css="tabs-list">
         {/* This is the Tabs div! */}
-        <button>listing reviews tab--span goes in here</button>
-        <button>shop reviews tab--span goes in here</button>
+        <button>Reviews for this item</button>
+        <button>Reviews for this shop</button>
       </div>
 
       <div className="sort-feature" css="justify-content-flex-end">

@@ -1,0 +1,48 @@
+.tabsContainer {
+  margin-bottom: 18px;
+}
+
+.tabsList {
+  display: flex;
+  border-bottom: 2px solid rgba(34, 34, 34, 0.15);
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabsList button {
+  white-space: normal;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  margin: 0 12px;
+  position: relative;
+  font-size: 16px;
+  text-transform: none;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+}
+
+.tabsList button:first-of-type {
+  margin-left: 0;
+}
+
+.tabsList button:nth-of-type(2) {
+  margin-right: 0;
+}
+
+.tabsList button::after {
+  width: 100%;
+  border-bottom-color: #222222;
+}
