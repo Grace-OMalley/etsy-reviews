@@ -18,7 +18,7 @@ class Rating extends React.Component {
         {/* This is the Rating div! */}
         <div className={styles.ratingDisplay} css="margin-bottom-12px">
           <div className={styles.ratingDiv}>
-            <h3>{this.props.product.itemReviewsQuant} reviews</h3>
+            <h3 className={styles.header}>{this.props.product.itemReviewsQuant} reviews</h3>
             <span css={styles.starContainerSpan}>
               {/* <span>hidden inputs go here</span> */}
               {/* STARS */}

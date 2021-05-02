@@ -46,3 +46,91 @@
   width: 100%;
   border-bottom-color: #222222;
 }
+
+.tabsList span {
+  background: #EAEAEA;
+  margin-left: 12px !important;
+  border-radius: 15px;
+  color: inherit;
+  display: inline-block;
+  word-break: break-word;
+  line-height: 1;
+  font-size: 13px;
+  font-weight: normal;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 9px;
+  padding-right: 9px;
+  min-width: 25px;
+}
+
+.sortFeature {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sortMenu {
+  display: inline-flex;
+  position: relative;
+  color: #222;
+  font-family: -apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sortMenu button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  border-radius: 24px;
+  position: relative;
+  vertical-align: middle;
+  z-index: 10;
+  left: 7px;
+  color: #222222;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+.triggerLabel {
+  position: relative;
+  flex-grow: 1;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+}
+
+.menuCaret {
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  vertical-align: middle;
+  width: 24px;
+}

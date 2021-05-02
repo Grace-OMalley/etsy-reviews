@@ -32,17 +32,17 @@
   vertical-align: middle;
   height: 18px;
   width: 18px;
-  margin: 0px 1px;
+  margin: 0px 2px;
 }
 
-h3 {
+.header {
+  font-family: "Guardian-EgypTT", serif;
   margin-right: 12px !important;
   /* margin-bottom: 0; */
   font-size: 26px;
   line-height: 42px;
   font-weight: 300;
   letter-spacing: 0.35px;
-  font-family: "Guardian-EgypTT", serif;
 }
 
 .statementOuter {
