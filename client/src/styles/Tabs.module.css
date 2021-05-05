@@ -36,16 +36,26 @@
 
 .tabsList button:first-of-type {
   margin-left: 0;
+  /* border-bottom-color: black;
+  border-bottom-width: 1px; */
 }
 
 .tabsList button:nth-of-type(2) {
   margin-right: 0;
 }
 
-.tabsList button::after {
-  width: 100%;
-  border-bottom-color: #222222;
+/* Why isn't this working? */
+
+.tabsList button:nth-of-type(1)::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  border-bottom: 2px solid black;
+  left: 50%;
 }
+
 
 .tabsList span {
   background: #EAEAEA;
@@ -104,14 +114,18 @@
   line-height: 1.4;
   min-height: 36px;
   min-width: 36px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 9px 15px;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: normal;
   word-spacing: normal;
+  transition: opacity 0.3s cubic-bezier(0.345, 0.115, 0.135, 1.42);
+}
+
+.sortMenu button:hover {
+  transition: opacity 0.3s cubic-bezier(0.345, 0.115, 0.135, 1.42);
+  background: rgba(34, 34, 34, 0.15);
+
 }
 
 .triggerLabel {
@@ -133,4 +147,9 @@
   height: 24px;
   vertical-align: middle;
   width: 24px;
+}
+
+,.menuCaret svg {
+  display: block;
+
 }

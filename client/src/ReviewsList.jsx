@@ -6,7 +6,8 @@ class ReviewsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: this.props.reviews
+      reviews: this.props.reviews,
+      reviewsOrder: 'recommended'
     }
     // bindings go here
   }
@@ -14,11 +15,15 @@ class ReviewsList extends React.Component {
 // methods here
 
   render() {
+    let reviews;
+    if (this.state.reviewsOrder === 'recommended') {
+      reviews = this.state.reviews;
+    }
     return (
       <div className={styles.reviewsContainer}>
         <div className={styles.gridBlock}>
             {/* --> ReviewItem component goes here */}
-            {this.state.reviews.map((review, i) => {
+            {reviews.map((review, i) => {
             return <ReviewItem review={review} key={i} />
           })}
         </div>

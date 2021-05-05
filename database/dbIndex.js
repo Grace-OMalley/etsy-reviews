@@ -5,15 +5,12 @@ var faker = require('faker');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-});
 
 const productSchema = new mongoose.Schema({
+  // productID: Number,
   overallRating: Number,
   itemReviewsQuant: String,
   reviews: [{
-    userId: Number,
     username: String,
     userPic: String,
     reviewDate: String,
@@ -53,7 +50,7 @@ const populateData = () => {
         reviewDate: faker.date.recent(),
         reviewBody: faker.lorem.paragraphs(),
         starRating: ratingValue,
-        userProductImage: faker.commerce.product()
+        userProductImage: faker.image.imageURL()
       }
 
       // push review to reviews array on product model

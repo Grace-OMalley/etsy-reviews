@@ -13,9 +13,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       productsList: [],
-      currentProduct: null
+      currentProduct: null,
+      reviewsOrder: 'recommended'
     }
     // bindings go here
+    this.changeOrder = this.changeOrder.bind(this);
+  }
+
+  changeOrder(order) {
+    this.setState({
+      reviewsOrder: order
+    })
   }
 
   componentDidMount() {
@@ -46,7 +54,7 @@ class App extends React.Component {
               <div className="data-reviews">
                 {/* --> TABS COMPONENT GOES HERE
                 ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
-                <Tabs />
+                <Tabs orderSelect={this.changeOrder}/>
 
                 {/* --> REVIEWS LIST COMPONENT GOES HERE */}
                 {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews}/> : null }

@@ -14,8 +14,7 @@ app.get('/', (req, res) => {
 app.get('/findOne', async (req, res) => {
 console.log('GET received');
 let product = await database.getProduct();
-
-// console.log('product:', product);
+console.log('product:', product);
 res.status(201);
 res.send(product);
 
