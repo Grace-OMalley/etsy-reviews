@@ -23,6 +23,8 @@ class App extends React.Component {
   changeOrder(order) {
     this.setState({
       reviewsOrder: order
+    }, () => {
+      console.log('updated reviews order:', this.state.reviewsOrder);
     })
   }
 
@@ -54,10 +56,10 @@ class App extends React.Component {
               <div className="data-reviews">
                 {/* --> TABS COMPONENT GOES HERE
                 ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
-                <Tabs orderSelect={this.changeOrder}/>
+                <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0}/>
 
                 {/* --> REVIEWS LIST COMPONENT GOES HERE */}
-                {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews}/> : null }
+                {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
 
               </div>
 

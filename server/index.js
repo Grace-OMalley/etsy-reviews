@@ -3,6 +3,7 @@ const app = express()
 const port = 1128
 const bodyParser = require('body-parser');
 const database = require('../database/dbIndex.js');
+const helpers = require('./helpers.js');
 
 app.use(express.static('client/dist'))
 app.use(bodyParser.json());
@@ -14,9 +15,12 @@ app.get('/', (req, res) => {
 app.get('/findOne', async (req, res) => {
 console.log('GET received');
 let product = await database.getProduct();
-console.log('product:', product);
+// console.log('RETRIEVED product');
+let finalProduct = await helpers.sortDates(product);
+console.log('finalProduct:', finalProduct);
+
 res.status(201);
-res.send(product);
+res.send(finalProduct);
 
 })
 
