@@ -42,7 +42,6 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
       <div className={styles.outerCol}>
         {/* Outermost col */}

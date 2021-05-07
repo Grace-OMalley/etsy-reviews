@@ -1,12 +1,13 @@
 .outerCol {
-  width: 60%;
+  max-width: 60%;
+  min-width: 60%;
   clear: left;
   flex: none;
 }
 
 .innerCol {
   max-width: 100%;
-  min-width: 0px;
+  min-width: 100%;
   padding-left: 30px !important;
   align-items: flex-start;
 }
