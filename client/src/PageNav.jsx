@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles/PageNav.module.css';
 
 class PageNav extends React.Component {
   constructor(props) {
@@ -12,12 +13,32 @@ class PageNav extends React.Component {
 // methods here
 
   render() {
-    return (
-      <div>
-        <div>This is the number of pages: {this.props.pagesCount}</div>
-        <div>This is the current page: {this.props.currentPage}</div>
+    //page button function
+    const listItems = [];
+    const generatePageButtons = () => {
+      for (let i = 0; i < this.props.pagesCount; i++) {
+        listItems.push(<li class="wt-action-group__item-container">
+        <a className={styles.listItem} aria-current="page">
+            <span className={styles.outerSpan}>Current page</span>
+            <span className={styles.innerSpan}>1</span>
+        </a>
+      </li>)
+      }
+    }
+    generatePageButtons();
 
-      </div>
+    return (
+      // <div>
+      //   <div>This is the number of pages: {this.props.pagesCount}</div>
+      //   <div>This is the current page: {this.props.currentPage}</div>
+      // </div>
+
+      <nav className={styles.navContainer}>
+        <ul>
+          {listItems}
+        </ul>
+
+      </nav>
 
     )
   }

@@ -1,0 +1,74 @@
+.navContainer {
+  display: block;
+  margin: 0;
+}
+
+.navContainer > ul {
+  list-style-type: none;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px !important;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.listItem {
+  margin-right: 6px;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.listItem a {
+  cursor: default;
+  color: #222222;
+  margin-bottom: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  text-decoration: none;
+}
+
+.listItem a::before {
+  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42),opacity 150ms ease-out;
+  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+  opacity: 0;
+  content: "";
+  background: inherit;
+  border: inherit;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotate(0.0001deg);
+  -webkit-backface-visibility: hidden;
+}
+
+.listitem a::after {
+  background: rgba(34, 34, 34, 0.4);
+  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42),background 150ms ease-out,box-shadow 200ms ease-out;
+
+
+}
+
+.outerSpan {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+

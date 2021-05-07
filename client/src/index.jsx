@@ -15,7 +15,7 @@ class App extends React.Component {
       productsList: [],
       currentProduct: null,
       reviewsOrder: 'recommended',
-      currentPage: 7
+      currentPage: 1
     }
     // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
