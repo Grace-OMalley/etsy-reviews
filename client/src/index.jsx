@@ -14,7 +14,9 @@ class App extends React.Component {
     this.state = {
       productsList: [],
       currentProduct: null,
-      reviewsOrder: 'recommended'
+      reviewsOrder: 'recommended',
+      pageCount: Math.ceil(productsList.length/4),
+      currentPage: 1;
     }
     // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
