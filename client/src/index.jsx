@@ -15,8 +15,7 @@ class App extends React.Component {
       productsList: [],
       currentProduct: null,
       reviewsOrder: 'recommended',
-      pageCount: Math.ceil(productsList.length/4),
-      currentPage: 1;
+      currentPage: 7
     }
     // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
@@ -60,12 +59,11 @@ class App extends React.Component {
                 <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0}/>
 
                 {/* --> REVIEWS LIST COMPONENT GOES HERE */}
-                {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
-
+                {this.state.currentProduct !== null ? <ReviewsList currentPage={this.state.currentPage} reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
               </div>
 
               <div className="nav-container">
-                --> PAGE NAV COMPONENT GOES HERE
+                {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} /> : null}
               </div>
             </div>
 

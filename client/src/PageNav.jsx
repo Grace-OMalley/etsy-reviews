@@ -4,7 +4,7 @@ class PageNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pages: 0
+      pagesCount: Math.ceil(this.props.productList / 4)
     }
     // bindings go here
   }
@@ -13,7 +13,12 @@ class PageNav extends React.Component {
 
   render() {
     return (
-      <div>This is the PageNav div!</div>
+      <div>
+        <div>This is the number of pages: {this.props.pagesCount}</div>
+        <div>This is the current page: {this.props.currentPage}</div>
+
+      </div>
+
     )
   }
 }
