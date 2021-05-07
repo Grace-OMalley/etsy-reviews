@@ -235,13 +235,4 @@ li:nth-of-type(2n)::before {
   opacity: 1;
 }
 
-/* .textBody > button::before {
-  background-color: rgba(34, 34, 34, 0.15);
-  opacity: 1;
-  background: #222222;
-  transform: scale(0.7) perspective(1px);
-  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42),opacity 150ms ease-out;
-  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
-} */
-
 

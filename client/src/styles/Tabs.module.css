@@ -34,18 +34,34 @@
   text-rendering: auto;
 }
 
-.tabsList button:first-of-type {
-  margin-left: 0;
+/* Why isn't this bottom border working? */
+
+.selectedTab::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  box-sizing: border-box;
+  width: 213.562px;
+  border-bottom-width: 2px;
+  border-bottom: 2px solid black;
+  transform: translateX(-50%);
+  left: 106.781px;
+}
+
+/* .tabsList button:nth-of-type(1)::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  border-bottom: 2px solid black;
+  left: 50%;
 }
 
 .tabsList button:nth-of-type(2) {
   margin-right: 0;
-}
-
-.tabsList button::after {
-  width: 100%;
-  border-bottom-color: #222222;
-}
+} */
 
 .tabsList span {
   background: #EAEAEA;
@@ -62,6 +78,7 @@
   padding-left: 9px;
   padding-right: 9px;
   min-width: 25px;
+  text-align: center;
 }
 
 .sortFeature {
@@ -79,13 +96,14 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.sortMenu button {
+.menuButton {
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-align: left;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   background: none;
+  box-sizing: border-box;
   border: none;
   font: inherit;
   cursor: pointer;
@@ -94,7 +112,7 @@
   -webkit-appearance: none;
   -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
-  border-radius: 24px;
+  border-radius: 24px !important;
   position: relative;
   vertical-align: middle;
   z-index: 10;
@@ -104,14 +122,100 @@
   line-height: 1.4;
   min-height: 36px;
   min-width: 36px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 9px 15px;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: normal;
   word-spacing: normal;
+}
+
+.toggleOff:hover {
+  /* transition: background 0.3s cubic-bezier(0.345, 0.115, 0.135, 1.42); */
+  background: rgba(34, 34, 34, 0.15);
+}
+
+/* .sortMenu > button:hover {
+  transition: opacity 0.3s cubic-bezier(0.345, 0.115, 0.135, 1.42);
+  background: rgba(34, 34, 34, 0.15);
+} */
+
+.dropdown {
+  background: #FFF;
+  border-radius: 12px;
+  border: 1px rgba(34, 34, 34, 0.15) solid;
+  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+  min-width: 200.797px;
+  padding-bottom: 0px;
+  padding-top: 42px;
+  display: block;
+  max-width: 300px;
+  overflow: hidden;
+  font-size: 16px;
+  max-height: 480px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-left: 0;
+  transform-origin: top left;
+  transform: scaleX(1) scaleY(1) perspective(1px);
+  transition: opacity 180ms ease-out,transform 180ms cubic-bezier(0.175, 0.885, 0.4, 1.1);
+}
+
+.dropdownItem {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  transition: background-color 100ms ease-out;
+  color: #222222;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+  list-style: none;
+  min-width: 100%;
+  width: max-content;
+  max-width: 298px;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 13px;
+  /* height: 42px; */
+}
+
+.dropdownItem::after {
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23222222%22 d%3D%22M10.55 16.97L6.3 12.7a1 1 0 0 1 1.42-1.42l2.74 2.74 5.8-6.68a1 1 0 0 1 1.5 1.3l-7.2 8.32z%22%2F%3E%3C%2Fsvg%3E"); */
+  content: "";
+  background-image: none;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  margin-right: -2px;
+  min-width: 24px;
+  width: 24px;
+  height: 18px;
+}
+
+.selected::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23222222%22 d%3D%22M10.55 16.97L6.3 12.7a1 1 0 0 1 1.42-1.42l2.74 2.74 5.8-6.68a1 1 0 0 1 1.5 1.3l-7.2 8.32z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.menuOn {
+  visibility: visible !important;
+}
+
+.menuOff {
+  visibility: hidden;
 }
 
 .triggerLabel {
@@ -133,4 +237,9 @@
   height: 24px;
   vertical-align: middle;
   width: 24px;
+}
+
+.menuCaret svg {
+  display: block;
+
 }
