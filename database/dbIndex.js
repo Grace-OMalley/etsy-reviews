@@ -64,7 +64,7 @@ const populateData = async () => {
     //assign overall rating
     let averageRating = Math.ceil(reviewSum / reviewsQuantity);
     console.log('average rating:', averageRating);
-    // product.overallRating = reviewSum / reviewsQuantity;
+    product.overallRating = averageRating;
 
     //save current product to DB
     product.save((error, doc) => {
