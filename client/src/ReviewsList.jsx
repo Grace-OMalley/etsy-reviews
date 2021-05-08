@@ -17,7 +17,7 @@ class ReviewsList extends React.Component {
 
     let reviews = this.state.reviews;
 
-    if (this.props.reviewsOrder === 'newest') {
+    if (this.props.reviewsOrder === 'Newest') {
       console.log('NEWEST')
       reviews.sort((a, b) => {
       let dateA = new Date(a.reviewDate);
@@ -26,7 +26,7 @@ class ReviewsList extends React.Component {
     })
       console.log('sorted reviews:', reviews);
       // reviews = reviews.slice(0, 4);
-    } else if (this.props.reviewsOrder === 'recommended') {
+    } else if (this.props.reviewsOrder === 'Recommended') {
       console.log('RECOMMENDED')
       reviews.sort((a, b) => {
         return b.starRating - a.starRating;

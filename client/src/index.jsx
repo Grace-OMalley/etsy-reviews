@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       productsList: [],
       currentProduct: null,
-      reviewsOrder: 'recommended',
+      reviewsOrder: 'Recommended',
       currentPage: 1
     }
     // bindings go here
