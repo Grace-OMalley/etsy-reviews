@@ -1,0 +1,52 @@
+.navContainer {
+  display: block;
+  margin: 0;
+}
+
+.list {
+  list-style:none;
+  list-style-type: none;
+  margin-right: 0;
+  margin-bottom: 36px !important;
+  padding:0;
+  display:flex;
+  /* justify-content:space-between; */
+  width:50%;
+  /* gap:2px; */
+}
+
+.listItem {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  /* background:red; */
+  /* width:100%; */
+  width: 35px;
+  overflow:hidden;
+  cursor: pointer;
+}
+
+.anchorTag {
+  width: 10px;
+  height: 10px;
+  display:block;
+  text-align:center;
+  background-color: rgba(34, 34, 34, 0.075);
+  padding:10px;
+  border-radius:50%;
+  /* color:#fff; */
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.myArrow {
+  background-size: 20px 30px;
+}
+
+.selectedPage {
+  background-color: rgba(34, 34, 34, 0.4);
+}
+
+

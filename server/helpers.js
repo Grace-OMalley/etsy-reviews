@@ -7,7 +7,7 @@ const sortDates = async (product) => {
   //   return dateA - dateB;
   // })
 
-  console.log('sorted dates:', reviews.reverse());
+  // console.log('sorted dates:', reviews.reverse());
 
   product.reviews = reviews;
   return product;

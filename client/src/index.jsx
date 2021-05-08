@@ -14,10 +14,32 @@ class App extends React.Component {
     this.state = {
       productsList: [],
       currentProduct: null,
-      reviewsOrder: 'recommended'
+      reviewsOrder: 'recommended',
+      currentPage: 1
     }
     // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
+    this.changePage = this.changePage.bind(this);
+
+  }
+
+  changePage(page) {
+    console.log('change page called:', page);
+    if (typeof page === 'number') {
+      this.setState({
+        currentPage: page
+      })
+    } else if (page === 'left') {
+      this.setState({
+        currentPage: this.state.currentPage === 1 ? this.state.currentPage : this.state.currentPage - 1
+      })
+    } else if (page === 'right') {
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      })
+    }
+
+
   }
 
   changeOrder(order) {
@@ -58,12 +80,11 @@ class App extends React.Component {
                 <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0}/>
 
                 {/* --> REVIEWS LIST COMPONENT GOES HERE */}
-                {this.state.currentProduct !== null ? <ReviewsList reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
-
+                {this.state.currentProduct !== null ? <ReviewsList currentPage={this.state.currentPage} reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
               </div>
 
               <div className="nav-container">
-                --> PAGE NAV COMPONENT GOES HERE
+                {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} changePage={this.changePage} /> : null}
               </div>
             </div>
 

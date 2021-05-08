@@ -17,11 +17,11 @@ console.log('GET received');
 let product = await database.getProduct();
 // console.log('RETRIEVED product');
 let finalProduct = await helpers.sortDates(product);
+console.log('Why doesnt this log??');
 console.log('finalProduct:', finalProduct);
 
 res.status(201);
 res.send(finalProduct);
-
 })
 
 app.listen(port, () => {
