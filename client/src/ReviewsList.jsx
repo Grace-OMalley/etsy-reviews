@@ -55,8 +55,8 @@ class ReviewsList extends React.Component {
     const first = (this.props.currentPage - 1) * 4;
     const last = first + 4;
     const page = reviews.slice(first, last);
-    console.log(first, last);
-    console.log('current page:', page);
+    // console.log(first, last);
+    // console.log('current page:', page);
 
     return (
       <div className={styles.reviewsContainer}>

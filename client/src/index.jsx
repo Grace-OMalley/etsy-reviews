@@ -19,6 +19,27 @@ class App extends React.Component {
     }
     // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
+    this.changePage = this.changePage.bind(this);
+
+  }
+
+  changePage(page) {
+    console.log('change page called:', page);
+    if (typeof page === 'number') {
+      this.setState({
+        currentPage: page
+      })
+    } else if (page === 'left') {
+      this.setState({
+        currentPage: this.state.currentPage === 1 ? this.state.currentPage : this.state.currentPage - 1
+      })
+    } else if (page === 'right') {
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      })
+    }
+
+
   }
 
   changeOrder(order) {
@@ -63,7 +84,7 @@ class App extends React.Component {
               </div>
 
               <div className="nav-container">
-                {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} /> : null}
+                {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} changePage={this.changePage} /> : null}
               </div>
             </div>
 
