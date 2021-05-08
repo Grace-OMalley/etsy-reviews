@@ -31,7 +31,6 @@ handleReviewsClick(event) {
 }
 
 handleOutsideClick(event) {
-
   if (!event.target.classList.contains('dropdown')) {
     this.setState({
       showMenu: false
