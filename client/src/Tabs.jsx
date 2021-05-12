@@ -9,7 +9,7 @@ class Tabs extends React.Component {
       showMenu: false,
       tab: 'item'
     }
-    // bindings go here
+    // bindings go
     this.toggleMenu = this.toggleMenu.bind(this);
     this.selectOrder = this.selectOrder.bind(this);
     this.handleReviewsClick = this.handleReviewsClick.bind(this);
@@ -72,14 +72,14 @@ toggleMenu() {
       <div className={styles.sortFeature} css="sort-feature">
         <div className={`${styles.sortMenu}`} css="sort-menu">
           <button className={`${styles.menuButton} ${toggleOff} dropdown`} onClick={this.toggleMenu} css="menu-button">
-            <span className={`${styles.triggerLabel} dropdown`} css="trigger-label">Sort by: Recommended</span>
+            <span className={`${styles.triggerLabel} dropdown`} css="trigger-label">Sort by: {this.props.selected}</span>
             <span className={`${styles.menuCaret} dropdown`} css="menu-trigger-caret">
               <svg className="dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="16.5 10 12 16 7.5 10 16.5 10"></polygon></svg>
             </span>
           </button>
           <div className={`${styles.dropdown} ${conditionalClass} dropdown`} css="dropdown" ref={this.ref}>
-            <button onClick={this.selectOrder} name="recommended" className={`${styles.dropdownItem} ${this.props.selected === 'recommended' ? styles.selected : ''} dropdown`}>Recommended</button>
-            <button onClick={this.selectOrder} name="newest" className={`${styles.dropdownItem} ${this.props.selected === 'newest' ? styles.selected : ''} dropdown`}>Newest</button>
+            <button onClick={this.selectOrder} name="Recommended" className={`${styles.dropdownItem} ${this.props.selected === 'Recommended' ? styles.selected : ''} dropdown`}>Recommended</button>
+            <button onClick={this.selectOrder} name="Newest" className={`${styles.dropdownItem} ${this.props.selected === 'Newest' ? styles.selected : ''} dropdown`}>Newest</button>
           </div>
         </div>
       </div>
