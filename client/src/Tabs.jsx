@@ -58,12 +58,12 @@ toggleMenu() {
       <div className={styles.tabsContainer} css="tabs-container">
         <div className={styles.tabsList} css="tabs-list">
           {/* This is the Tabs div! */}
-          <button name="item" className={`${styles.itemReviews} ${this.state.tab === 'item' ? styles.selectedTab : ''}`} onClick={this.handleReviewsClick}>
+          <button name="item" className={`${styles.itemReviews} ${this.state.tab === 'item' ? styles.selectedTab : styles.offTab}`} onClick={this.handleReviewsClick}>
             Reviews for this item
             <span>{this.props.itemReviewsQuant}</span>
           </button>
 
-          <button name="shop" className={`${styles.shopReviews} ${this.state.tab === 'shop' ? styles.selectedTab : ''}`} onClick={this.handleReviewsClick}>
+          <button name="shop" className={`${styles.shopReviews} ${this.state.tab === 'shop' ? styles.selectedTab : styles.offTab}`} onClick={this.handleReviewsClick}>
             Reviews for this shop
             <span>200</span>
             </button>

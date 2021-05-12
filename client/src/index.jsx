@@ -20,7 +20,6 @@ class App extends React.Component {
     // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
     this.changePage = this.changePage.bind(this);
-
   }
 
   changePage(page) {
@@ -38,8 +37,6 @@ class App extends React.Component {
         currentPage: this.state.currentPage + 1
       })
     }
-
-
   }
 
   changeOrder(order) {
@@ -57,7 +54,8 @@ class App extends React.Component {
       success: (product) => {
         console.log('successfully retrieved:', product);
         this.setState({
-          currentProduct: product
+          currentProduct: product,
+          overallRating: product.overallRating
         })
       }
     })
@@ -73,7 +71,7 @@ class App extends React.Component {
             {/* reviews panel--encompasses reviews AND photo bank */}
             <div className="listing-page-reviews">
               {/* <p>does NOT encompass photo bank</p> */}
-              {this.state.currentProduct !== null ? <Rating product={this.state.currentProduct}/> : null }
+              {this.state.currentProduct !== null && this.state.overallRating !== null ? <Rating product={this.state.currentProduct} rating={this.state.overallRating}/> : null }
               <div className="data-reviews">
                 {/* --> TABS COMPONENT GOES HERE
                 ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
