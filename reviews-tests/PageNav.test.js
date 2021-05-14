@@ -31,13 +31,16 @@ describe('Page Nav component', () => {
 
   // Should not render arrows when passed one page or fewer'
   it('Should not render arrows when passed one page or fewer', () => {
-    const wrapper = mount(<PageNav pagesCount={1} currentPage={1} />);
+    const pagesCount = 1;
+    const wrapper = mount(<PageNav pagesCount={pagesCount} currentPage={1} />);
 
     const leftArrow = wrapper.find('svg .left');
     const rightArrow = wrapper.find('svg .right');
+    const items = wrapper.find('.listItem');
 
     expect(leftArrow).toHaveLength(0);
     expect(rightArrow).toHaveLength(0);
+    expect(items).toHaveLength(pagesCount);
   })
 
   // Clicking arrow buttons should cycle pages
@@ -50,12 +53,8 @@ describe('Page Nav component', () => {
     const rightArrow = wrapper.find('svg .right');
 
     expect(wrapper.props().currentPage).toBe(1);
-    // simulate click here
-    rightArrow.simulate('click');
-    expect(handleClick).toHaveBeenCalled();
     leftArrow.simulate('click');
-    expect(handleClick).toHaveBeenCalled();
-
-
+    rightArrow.simulate('click');
+    expect(handleClick).toHaveBeenCalledTimes(2);
   })
 })
