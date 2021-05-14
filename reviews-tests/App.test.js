@@ -319,26 +319,27 @@ const reviews = [
 ]
 
 
-// describe('Reviews feature', () => {
+describe('App', () => {
 
-//   it('Reviews List component renders to the page', () => {
-//     const wrapper = mount(<App />);
+  it('Reviews List component renders to the page', () => {
+    const wrapper = mount(<App />);
+    // const containe = wrapper.find()
 
-//     // expect(wrapper.containsMatchingElement(<ReviewsList currentPage={1} reviews={reviews} reviewsOrder={'Recommended'} />)).toBe(true);
+    // expect(wrapper.containsMatchingElement(<ReviewsList currentPage={1} reviews={reviews} reviewsOrder={'Recommended'} />)).toBe(true);
 
-//     // console.log(wrapper.find('.listing-page-reviews').debug());
+    // console.log(wrapper.find('.listing-page-reviews').debug());
 
-//     expect(wrapper.find(ReviewsList)).toHaveLength(1);
-//   })
+    expect(wrapper.find(ReviewsList)).toHaveLength(1);
+  })
 
-//   it('Page Nav component should render to the page', () => {
-//     const wrapper = mount(<App />);
+  it('Page Nav component should render to the page', () => {
+    const wrapper = mount(<App />);
 
-//     // expect(wrapper.containsMatchingElement(<ReviewsList currentPage={1} reviews={reviews} reviewsOrder={'Recommended'} />)).toBe(true);
+    // expect(wrapper.containsMatchingElement(<ReviewsList currentPage={1} reviews={reviews} reviewsOrder={'Recommended'} />)).toBe(true);
 
-//     // console.log(wrapper.find('.listing-page-reviews').debug());
+    // console.log(wrapper.find('.listing-page-reviews').debug());
 
-//     expect(wrapper.find(PageNav)).toHaveLength(1);
-//   })
-// })
+    expect(wrapper.find(PageNav)).toHaveLength(1);
+  })
+})
 

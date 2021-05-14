@@ -36,7 +36,6 @@ handleClick(event) {
 
 
   render() {
-
     //page button function
     const listItems = [];
     const generatePageButtons = () => {
