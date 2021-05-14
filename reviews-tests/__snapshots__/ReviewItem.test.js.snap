@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review Item should render to the page 1`] = `
+<div
+  className="reviewItem"
+>
+  <div
+    className="userDate"
+    css="user-date"
+  >
+    <div
+      className="profileContainer"
+      css="user-profile-img-container"
+    >
+      <img
+        className="profilePic"
+        css="profile-pic"
+        src="https://cdn.fakercloud.com/avatars/madysondesigns_128.jpg"
+      />
+    </div>
+    <div
+      className="usernameDate"
+      css="username-date-container"
+    >
+      <p>
+        <a
+          className="anchor"
+        >
+          Kelsie Harvey
+        </a>
+        Jun 13 2020
+      </p>
+    </div>
+  </div>
+  <div
+    className="bodyContainer"
+    css="body-text-container"
+  >
+    <div
+      className="innerBodyContainer"
+      css="inner-body-container"
+    >
+      <div
+        className="innermostContainer"
+      >
+        <div
+          className="innerContainer"
+          css="margin-right-48px"
+        >
+          <div
+            className="starsContainer"
+            css="margin-left-6px"
+          >
+            <span
+              className="starsSpan"
+              css="stars-span"
+            >
+              <span
+                data-rating="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="3 3 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+                  />
+                </svg>
+              </span>
+              <span
+                data-rating="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="3 3 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+                  />
+                </svg>
+              </span>
+              <span
+                data-rating="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="3 3 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+                  />
+                </svg>
+              </span>
+              <span
+                data-rating="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="3 3 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+                  />
+                </svg>
+              </span>
+              <span
+                data-rating="0"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  viewBox="3 3 18 18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          className="specsContainer"
+          css="specs-container"
+        >
+          <div
+            className="innerSpecsContainer"
+            css="inner-specs-container"
+          >
+            <ul>
+              <li
+                className="listItem"
+              >
+                <p
+                  className="specType"
+                >
+                  SPEC TYPE: 
+                </p>
+                <p
+                  className="specBody"
+                >
+                   SPECIFICATION_BODY
+                </p>
+              </li>
+              <li
+                className="listItem"
+              >
+                <p
+                  className="specType"
+                >
+                  SPEC TYPE: 
+                </p>
+                <p
+                  className="specBody"
+                >
+                   SPECIFICATION_BODY
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="textBodyContainer"
+          css="text-body-container"
+        >
+          <div
+            className="textBody"
+            css="text-body"
+          >
+            <div
+              className="text"
+            >
+              <p>
+                Provident optio dolores numquam dolorem quibusdam necessitatibus expedita tenetur mollitia. Fugiat rerum porro et laboriosam voluptas consequatur quas. Itaque nostrum necessitatibus. Voluptatem consequatur amet. Nemo deserunt nam fugit inventore et nam perferendis ut.
+ 
+Et perferendis sunt enim tempore. Quasi earum necessitatibus soluta. Et ea minus veritatis incidunt ipsa facere nostrum aliquid itaque. Laudantium debitis dolores. Soluta fugiat ut.
+ 
+Voluptatem voluptas totam in iste omnis harum quidem. Molestiae eos et at sed et et. Aliquam et possimus pariatur ex blanditiis. Laborum in doloribus laboriosam non tenetur quo eum. Modi assumenda ut ut praesentium harum ducimus.
+              </p>
+            </div>
+            <button />
+          </div>
+        </div>
+      </div>
+      <div
+        className="user-img-container"
+      >
+        user-uploaded image goes here as button
+        <button>
+          <img
+            src="img url goes here"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
