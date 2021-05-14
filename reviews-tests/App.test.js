@@ -6,7 +6,6 @@ import ReviewsList from '../client/src/ReviewsList.jsx';
 import Tabs from '../client/src/Tabs.jsx';
 import PageNav from '../client/src/PageNav.jsx';
 
-
 import styles from '../client/src/styles/index.module.css';
 import {shallow, mount, render} from 'enzyme';
 
