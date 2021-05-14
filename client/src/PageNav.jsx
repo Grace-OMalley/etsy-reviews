@@ -64,7 +64,6 @@ handleClick(event) {
           </li>)
           }
         }
-
       }
 
       if (listItems.length > 1) {
