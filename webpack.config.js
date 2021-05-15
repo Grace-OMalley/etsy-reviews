@@ -37,7 +37,7 @@ module.exports = {
     ]
   },
    output: {
-    filename: 'bundle.js',
+    filename: `reviews-bundle_${Date.now()}.js`,
     path: __dirname + '/client/dist'
   },
   resolve: {
@@ -45,3 +45,9 @@ module.exports = {
   },
   mode: 'development'
 };
+
+// let s = document.createElement('script');
+// s.src = module.exports.output.filename;
+// $('#app').append(s);
+
+
