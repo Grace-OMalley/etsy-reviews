@@ -9,6 +9,6 @@ import Rating from './Rating.jsx';
 import $ from 'jquery';
 import styles from "./styles/index.module.css";
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('reviews'));
 
 

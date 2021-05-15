@@ -42519,9 +42519,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_index_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), document.getElementById('app'));
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_index_jsx__WEBPACK_IMPORTED_MODULE_2__.default, null), document.getElementById('reviews'));
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=reviews-bundle_1621103914130.js.map
+//# sourceMappingURL=reviews-bundle.js.map
