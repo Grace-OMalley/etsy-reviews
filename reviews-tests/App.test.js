@@ -17,6 +17,7 @@ describe('App', () => {
     expect(wrapper.containsMatchingElement(<ReviewsList />)).toBe(false);
     expect(wrapper.containsMatchingElement(<PageNav />)).toBe(false);
     expect(wrapper.containsMatchingElement(<Rating />)).toBe(false);
+    expect(wrapper.containsMatchingElement(<Tabs />)).toBe(false);
 
     wrapper.setState({
       currentProduct: data.product
@@ -25,6 +26,7 @@ describe('App', () => {
     expect(wrapper.containsMatchingElement(<ReviewsList />)).toBe(true);
     expect(wrapper.containsMatchingElement(<PageNav/>)).toBe(true);
     expect(wrapper.containsMatchingElement(<Rating />)).toBe(true);
+    expect(wrapper.containsMatchingElement(<Tabs />)).toBe(true);
   })
 })
 
