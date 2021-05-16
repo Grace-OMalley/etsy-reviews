@@ -18,20 +18,20 @@ class ReviewsList extends React.Component {
     let reviews = this.state.reviews;
 
     if (this.props.reviewsOrder === 'Newest') {
-      console.log('NEWEST')
+      // console.log('NEWEST')
       reviews.sort((a, b) => {
       let dateA = new Date(a.reviewDate);
       let dateB = new Date(b.reviewDate);
       return dateB - dateA;
     })
-      console.log('sorted reviews:', reviews);
+      // console.log('sorted reviews:', reviews);
       // reviews = reviews.slice(0, 4);
     } else if (this.props.reviewsOrder === 'Recommended') {
-      console.log('RECOMMENDED')
+      // console.log('RECOMMENDED')
       reviews.sort((a, b) => {
         return b.starRating - a.starRating;
       });
-      console.log('sorted reviews:', reviews);
+      // console.log('sorted reviews:', reviews);
       // reviews = reviews.slice(0, 4);
     }
 
