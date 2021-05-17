@@ -51,8 +51,7 @@ describe('ReviewsList component', () => {
       let review = item.props().review;
       storage.push(review);
     });
-
+    
     expect(storage).toEqual(recommendedSortedReviews);
   });
-
 })

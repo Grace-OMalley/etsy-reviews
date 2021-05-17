@@ -37,7 +37,7 @@ module.exports = {
     ]
   },
    output: {
-    filename: 'bundle.js',
+    filename: `reviews-bundle.js`,
     path: __dirname + '/client/dist'
   },
   resolve: {
@@ -45,3 +45,5 @@ module.exports = {
   },
   mode: 'development'
 };
+
+
