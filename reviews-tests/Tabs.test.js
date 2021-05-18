@@ -30,7 +30,29 @@ describe('Tabs component', () => {
     const changeOrder = jest.fn();
     const wrapper = mount(<Tabs selectOrder={changeOrder} selected={'Newest'} itemReviewsQuant={24} />);
     expect(wrapper.find('.selected')).toEqual(wrapper.find('.Newest'));
+
+    wrapper.setProps({
+      selected: 'Recommended'
+    })
+    wrapper.update();
+    expect(wrapper.find('.selected')).toEqual(wrapper.find('.Recommended'));
   })
 
+  it('Should call setState and toggle menu when dropdown is clicked', () => {
+    const wrapper = mount(<Tabs selected={'Newest'} itemReviewsQuant={24} />);
+    const menuOn = wrapper.find('.menuOn');
+    const menuOff = wrapper.find('.menuOff');
+    const menuButton = wrapper.find('.menuButton');
 
+    const instance = wrapper.instance();
+    const stateSet = jest.spyOn(instance, 'setState');
+
+    expect(menuOn).toHaveLength(0);
+    expect(menuOff).toHaveLength(1);
+    expect(wrapper.state().showMenu).toBe(false);
+
+    menuButton.simulate('click');
+    expect(stateSet).toHaveBeenCalled();
+    expect(wrapper.state().showMenu).toBe(true);
+  })
 })
