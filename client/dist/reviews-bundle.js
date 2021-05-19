@@ -338,10 +338,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var ReviewItem = function ReviewItem(props) {
-  // conditional render function for star rating
-  // console.log(props.review.starRating);
   var renderStars = function renderStars() {
-    var filledStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+    var solidStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: 'solidStar',
       "data-rating": "0"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -352,6 +351,7 @@ var ReviewItem = function ReviewItem(props) {
       d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
     })));
     var hollowStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: 'hollowStar',
       "data-rating": "4"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
       xmlns: "http://www.w3.org/2000/svg",
@@ -366,7 +366,7 @@ var ReviewItem = function ReviewItem(props) {
 
     for (var i = 0; i < 5; i++) {
       if (i < rating) {
-        stars.push(filledStar);
+        stars.push(solidStar);
       } else {
         stars.push(hollowStar);
       }
@@ -511,19 +511,19 @@ var ReviewsList = /*#__PURE__*/function (_React$Component) {
       var reviews = this.state.reviews;
 
       if (this.props.reviewsOrder === 'Newest') {
-        console.log('NEWEST');
+        // console.log('NEWEST')
         reviews.sort(function (a, b) {
           var dateA = new Date(a.reviewDate);
           var dateB = new Date(b.reviewDate);
           return dateB - dateA;
-        });
-        console.log('sorted reviews:', reviews); // reviews = reviews.slice(0, 4);
+        }); // console.log('sorted reviews:', reviews);
+        // reviews = reviews.slice(0, 4);
       } else if (this.props.reviewsOrder === 'Recommended') {
-        console.log('RECOMMENDED');
+        // console.log('RECOMMENDED')
         reviews.sort(function (a, b) {
           return b.starRating - a.starRating;
-        });
-        console.log('sorted reviews:', reviews); // reviews = reviews.slice(0, 4);
+        }); // console.log('sorted reviews:', reviews);
+        // reviews = reviews.slice(0, 4);
       } //pagination logic here
       //page 1
       // (0, 4)
@@ -718,11 +718,11 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         onClick: this.selectOrder,
         name: "Recommended",
-        className: "".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Recommended' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
+        className: "Recommended ".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Recommended' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
       }, "Recommended"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         onClick: this.selectOrder,
         name: "Newest",
-        className: "".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Newest' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
+        className: "Newest ".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Newest' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
       }, "Newest")))));
     }
   }]);
@@ -799,6 +799,7 @@ var App = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
+      itemId: 0,
       productsList: [],
       currentProduct: null,
       reviewsOrder: 'Recommended',
@@ -847,13 +848,16 @@ var App = /*#__PURE__*/function (_React$Component) {
 
       jquery__WEBPACK_IMPORTED_MODULE_7___default().ajax({
         type: 'GET',
-        url: '/findOne',
+        url: '/reviews/' + 98,
         success: function success(product) {
           console.log('successfully retrieved:', product);
 
           _this3.setState({
+            itemId: product.itemId,
             currentProduct: product,
-            overallRating: product.overallRating
+            overallRating: product.overallRating,
+            reviewsOrder: 'Recommended',
+            currentPage: 1
           });
         }
       });
@@ -875,11 +879,11 @@ var App = /*#__PURE__*/function (_React$Component) {
         rating: this.state.overallRating
       }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "data-reviews"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
+      }, this.state.currentProduct !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
         selectOrder: this.changeOrder,
         selected: this.state.reviewsOrder,
         itemReviewsQuant: this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0
-      }), this.state.currentProduct !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewsList_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+      }) : null, this.state.currentProduct !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewsList_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
         currentPage: this.state.currentPage,
         reviews: this.state.currentProduct.reviews,
         reviewsOrder: this.state.reviewsOrder

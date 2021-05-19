@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      itemId: 0,
       productsList: [],
       currentProduct: null,
       reviewsOrder: 'Recommended',
@@ -50,12 +51,15 @@ class App extends React.Component {
   componentDidMount() {
     $.ajax({
       type: 'GET',
-      url: '/findOne',
+      url: '/reviews/' + 98,
       success: (product) => {
         console.log('successfully retrieved:', product);
         this.setState({
+          itemId: product.itemId,
           currentProduct: product,
-          overallRating: product.overallRating
+          overallRating: product.overallRating,
+          reviewsOrder: 'Recommended',
+          currentPage: 1
         })
       }
     })

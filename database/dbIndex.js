@@ -8,6 +8,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 const productSchema = new mongoose.Schema({
   // productID: Number,
+  itemId: Number,
   overallRating: Number,
   itemReviewsQuant: String,
   reviews: [{
@@ -35,6 +36,7 @@ const populateData = async () => {
     console.log('reviews quantity:', reviewsQuantity);
 
     let product = new Product({
+      itemId: i + 1,
       overallRating: 0,
       itemReviewsQuant: reviewsQuantity,
       reviews: []
@@ -78,10 +80,12 @@ const populateData = async () => {
   //...then move on to next product
 }
 
-populateData();
+// populateData();
 
-const getProduct = () => {
-  return Product.findOne({"reviews.10": {"$exists": true}});
+const getProduct = (id) => {
+  // return Product.findOne({"reviews.10": {"$exists": true}});
+  return Product.findOne({itemId: id});
+
 }
 
 // module.exports.generateData = generateData;
