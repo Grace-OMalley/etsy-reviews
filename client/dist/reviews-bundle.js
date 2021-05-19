@@ -332,115 +332,245 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/ReviewItem.module.css */ "./client/src/styles/ReviewItem.module.css");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
-var ReviewItem = function ReviewItem(props) {
-  // conditional render function for star rating
-  // console.log(props.review.starRating);
-  var renderStars = function renderStars() {
-    var filledStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-      "data-rating": "0"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "3 3 18 18",
-      "aria-hidden": "true",
-      focusable: "false"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-      d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
-    })));
-    var hollowStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-      "data-rating": "4"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      viewBox: "3 3 18 18",
-      "aria-hidden": "true",
-      focusable: "false"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-      d: "M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"
-    })));
-    var rating = props.review.starRating;
-    var stars = [];
 
-    for (var i = 0; i < 5; i++) {
-      if (i < rating) {
-        stars.push(filledStar);
-      } else {
-        stars.push(hollowStar);
-      }
+var ReviewItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(ReviewItem, _React$Component);
+
+  var _super = _createSuper(ReviewItem);
+
+  function ReviewItem(props) {
+    var _this;
+
+    _classCallCheck(this, ReviewItem);
+
+    _this = _super.call(this, props);
+    _this.state = {
+      clampText: true
+    }; // bindings go here
+
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ReviewItem, [{
+    key: "handleClick",
+    value: function handleClick() {
+      this.setState({
+        clampText: !this.state.clampText
+      });
     }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
 
-    return stars;
-  };
+      var renderStars = function renderStars() {
+        var solidStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          className: 'solidStar',
+          "data-rating": "0"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+          xmlns: "http://www.w3.org/2000/svg",
+          viewBox: "3 3 18 18",
+          "aria-hidden": "true",
+          focusable: "false"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+          d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+        })));
+        var hollowStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+          className: 'hollowStar',
+          "data-rating": "4"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+          xmlns: "http://www.w3.org/2000/svg",
+          viewBox: "3 3 18 18",
+          "aria-hidden": "true",
+          focusable: "false"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+          d: "M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"
+        })));
+        var rating = _this2.props.review.starRating;
+        var stars = [];
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.reviewItem
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.userDate,
-    css: "user-date"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.profileContainer,
-    css: "user-profile-img-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: props.review.userPic,
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.profilePic,
-    css: "profile-pic"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.usernameDate,
-    css: "username-date-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.anchor
-  }, props.review.username), props.review.reviewDate.slice(4, -42)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.bodyContainer,
-    css: "body-text-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innerBodyContainer,
-    css: "inner-body-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innermostContainer
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", _defineProperty({
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innerContainer,
-    css: "body-text"
-  }, "css", "margin-right-48px"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starsContainer,
-    css: "margin-left-6px"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starsSpan,
-    css: "stars-span"
-  }, renderStars()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specsContainer,
-    css: "specs-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innerSpecsContainer,
-    css: "inner-specs-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.listItem
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specType
-  }, "SPEC TYPE: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specBody
-  }, " SPECIFICATION_BODY")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.listItem
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specType
-  }, "SPEC TYPE: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specBody
-  }, " SPECIFICATION_BODY"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.textBodyContainer,
-    css: "text-body-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.textBody,
-    css: "text-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.text
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.review.reviewBody)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "user-img-container"
-  }, "user-uploaded image goes here as button", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: props.review.userProductImage
-  }))))));
-};
+        for (var i = 0; i < 5; i++) {
+          if (i < rating) {
+            stars.push(solidStar);
+          } else {
+            stars.push(hollowStar);
+          }
+        }
+
+        return stars;
+      };
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.reviewItem
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.userDate,
+        css: "user-date"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.profileContainer,
+        css: "user-profile-img-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: this.props.review.userPic,
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.profilePic,
+        css: "profile-pic"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.usernameDate,
+        css: "username-date-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.anchor
+      }, this.props.review.username), this.props.review.reviewDate.slice(4, -42)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.bodyContainer,
+        css: "body-text-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innerBodyContainer,
+        css: "inner-body-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innermostContainer
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", _defineProperty({
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innerContainer,
+        css: "body-text"
+      }, "css", "margin-right-48px"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starsContainer,
+        css: "margin-left-6px"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starsSpan,
+        css: "stars-span"
+      }, renderStars()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specsContainer,
+        css: "specs-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.innerSpecsContainer,
+        css: "inner-specs-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.listItem
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specType
+      }, "SPEC TYPE: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specBody
+      }, " SPECIFICATION_BODY")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.listItem
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specType
+      }, "SPEC TYPE: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.specBody
+      }, " SPECIFICATION_BODY"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.textBodyContainer,
+        css: "text-body-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.textBody,
+        css: "text-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.text
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: this.state.clampText === true ? _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.clamped : ''
+      }, this.props.review.reviewBody)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        className: "".concat(_styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.textButton, " ").concat(this.state.clampText === false ? _styles_ReviewItem_module_css__WEBPACK_IMPORTED_MODULE_1__.default.hidden : ''),
+        onClick: this.handleClick
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "user-img-container"
+      }, "user-uploaded image goes here as button", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: this.props.review.userProductImage
+      }))))));
+    }
+  }]);
+
+  return ReviewItem;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component); // const ReviewItem = (props) => {
+//   const renderStars = () => {
+//     const solidStar = <span className={'solidStar'} data-rating="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"></path></svg></span>
+//     const hollowStar = <span className={'hollowStar'} data-rating="4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"></path></svg></span>
+//     let rating = props.review.starRating;
+//     const stars = [];
+//     for (let i = 0; i < 5; i++) {
+//       if (i < rating) {
+//         stars.push(solidStar);
+//       } else {
+//         stars.push(hollowStar);
+//       }
+//     }
+//     return stars;
+//   }
+//   return (
+//     <div className={styles.reviewItem}>
+//       <div className={styles.userDate} css="user-date">
+//         <div className={styles.profileContainer} css="user-profile-img-container">
+//           <img src={props.review.userPic} className={styles.profilePic} css="profile-pic"/>
+//         </div>
+//         <div className={styles.usernameDate}css="username-date-container">
+//           <p><a className={styles.anchor}>{props.review.username}</a>{props.review.reviewDate.slice(4, -42)}</p>
+//         </div>
+//       </div>
+//         <div className={styles.bodyContainer} css="body-text-container">
+//           <div className={styles.innerBodyContainer} css="inner-body-container">
+//             <div className={styles.innermostContainer}>
+//             <div className={styles.innerContainer} css="body-text" css="margin-right-48px">
+//               <div className={styles.starsContainer} css="margin-left-6px">
+//                 <span className={styles.starsSpan} css="stars-span">
+//                   {renderStars()}
+//                   </span>
+//                 </div>
+//               </div>
+//               <div className={styles.specsContainer} css="specs-container">
+//                 <div className={styles.innerSpecsContainer} css="inner-specs-container">
+//                   <ul>
+//                     <li className={styles.listItem}>
+//                       <p className={styles.specType}>SPEC TYPE: </p>
+//                       <p className={styles.specBody}> SPECIFICATION_BODY</p>
+//                     </li>
+//                     <li className={styles.listItem}>
+//                       <p className={styles.specType}>SPEC TYPE: </p>
+//                       <p className={styles.specBody}> SPECIFICATION_BODY</p>
+//                     </li>
+//                   </ul>
+//                 </div>
+//               </div>
+//               <div className={styles.textBodyContainer} css="text-body-container">
+//                 <div className={styles.textBody} css="text-body">
+//                   <div className={styles.text}>
+//                     <p className ={this.state.clampText === true ? styles.clamped : ''}>{props.review.reviewBody}</p>
+//                   </div>
+//                   <button className={`${styles.textButton} ${this.state.clampText === false ? styles.hidden : ''}`}></button>
+//                 </div>
+//               </div>
+//             </div>
+//             <div className="user-img-container">
+//               user-uploaded image goes here as button
+//               <button>
+//                 <img src={props.review.userProductImage} />
+//               </button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewItem);
 
@@ -511,19 +641,19 @@ var ReviewsList = /*#__PURE__*/function (_React$Component) {
       var reviews = this.state.reviews;
 
       if (this.props.reviewsOrder === 'Newest') {
-        console.log('NEWEST');
+        // console.log('NEWEST')
         reviews.sort(function (a, b) {
           var dateA = new Date(a.reviewDate);
           var dateB = new Date(b.reviewDate);
           return dateB - dateA;
-        });
-        console.log('sorted reviews:', reviews); // reviews = reviews.slice(0, 4);
+        }); // console.log('sorted reviews:', reviews);
+        // reviews = reviews.slice(0, 4);
       } else if (this.props.reviewsOrder === 'Recommended') {
-        console.log('RECOMMENDED');
+        // console.log('RECOMMENDED')
         reviews.sort(function (a, b) {
           return b.starRating - a.starRating;
-        });
-        console.log('sorted reviews:', reviews); // reviews = reviews.slice(0, 4);
+        }); // console.log('sorted reviews:', reviews);
+        // reviews = reviews.slice(0, 4);
       } //pagination logic here
       //page 1
       // (0, 4)
@@ -718,11 +848,11 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         onClick: this.selectOrder,
         name: "Recommended",
-        className: "".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Recommended' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
+        className: "Recommended ".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Recommended' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
       }, "Recommended"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         onClick: this.selectOrder,
         name: "Newest",
-        className: "".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Newest' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
+        className: "Newest ".concat(_styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.dropdownItem, " ").concat(this.props.selected === 'Newest' ? _styles_Tabs_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selected : '', " dropdown")
       }, "Newest")))));
     }
   }]);
@@ -875,11 +1005,11 @@ var App = /*#__PURE__*/function (_React$Component) {
         rating: this.state.overallRating
       }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "data-reviews"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
+      }, this.state.currentProduct !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Tabs_jsx__WEBPACK_IMPORTED_MODULE_5__.default, {
         selectOrder: this.changeOrder,
         selected: this.state.reviewsOrder,
         itemReviewsQuant: this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0
-      }), this.state.currentProduct !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewsList_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
+      }) : null, this.state.currentProduct !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ReviewsList_jsx__WEBPACK_IMPORTED_MODULE_2__.default, {
         currentPage: this.state.currentPage,
         reviews: this.state.currentProduct.reviews,
         reviewsOrder: this.state.reviewsOrder
@@ -997,7 +1127,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".uVlOy-pAds8EOx9jyU1_0 {\n  flex-grow: 1;\n  flex-basis: 100%;\n  max-width: 100%;\n  padding: 9px;\n  box-sizing: inherit;\n  /* height: 200px; */\n  /* outline: solid black;\n  outline-width: thin; */\n}\n\n._1aHN3fwVDlE9Rt4ErcmKaW {\n  margin-bottom: 6px !important;\n  display: flex !important;\n  align-items: center !important;\n  height: 30px;\n}\n\n._20lupIuldZEnkHVYUznmTK {\n  height: 36px;\n  width: 36px;\n  margin-right: 12px !important;\n  display: inline-block;\n  vertical-align: middle;\n}\n\n._3kkb-pOYzM0ahNVDWnxIm3 {\n  height: 100% !important;\n  width: 100% !important;\n  border-radius: 50% !important;\n  overflow: hidden !important;\n  border: 0;\n  margin-right: 12px !important;\n}\n\n._3ksRxVJYiFx0GgnWMDvAMQ {\n  display: flex !important;\n  align-content: space-between !important;\n}\n\n._3ksRxVJYiFx0GgnWMDvAMQ > p {\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  box-sizing: border-box;\n}\n\n._1r-RUqDshTIuP5uP1hUR9v {\n  text-decoration: underline;\n  transition: opacity 200ms ease-out;\n  position: relative;\n  z-index: 0;\n  background: transparent;\n  margin-right: 6px !important;\n}\n\n._3u5n1MjVSgjryXRO9SqHJ8 {\n  padding-left: 48px !important;\n  margin: 0;\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n}\n\n.ukrpqHF8Dc6tSLYucWjOl {\n  display: flex;\n  justify-content: flex-start;\n  margin-bottom: 6px !important;\n}\n\n._3d0oKmu3G-I6XCSRSxeKLP {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n}\n\n._2fCxTeh0VVrTNxWYuyvKwH {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n  flex: 3 1 0% !important;\n}\n\n._1Ry1ov85ovJ6RDZflWwV7I {\n  margin-bottom: 6px !important;\n}\n\n._3QILJRDNUebT-9-3dlWQOt {\n  margin-right: 6px !important;\n  display: inline-block !important;\n  box-sizing: border-box;\n}\n\n._3QILJRDNUebT-9-3dlWQOt > span {\n  height: 18px;\n  width: 18px;\n  display: inline-block;\n  fill: currentColor;\n  vertical-align: middle;\n  bottom: 1px !important;\n  margin: 0px 1px;\n}\n\n.GitzI3yblSx0Z3io8nSDx {\n  line-height: 18px;\n  font-size: 13px;\n  /* font-weight: 500; */\n  font-weight: bold;\n  letter-spacing: 0.1px;\n  display: inline-block;\n  margin: 0;\n  padding-right: 3px;\n}\n\n .R6_F2FwTBcZWiax5jeS6M {\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  display: inline-block;\n  margin: 0;\n}\n\n._37r1Rur9DEV0u-GmPbt09t {\n  box-sizing: border-box;\n  margin: 0;\n  margin-bottom: 12px !important;\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n}\n\n._37r1Rur9DEV0u-GmPbt09t > ul {\n  list-style: none;\n  padding-left: 0;\n  overflow: hidden !important;\n  margin: 0;\n  box-sizing: border-box;\n  display: block;\n}\n\n._3cWGE8-mGdiKpA1E5r0ogR {\n  width: 100% !important;\n  display: flex !important;\n  justify-content: flex-start !important;\n}\n\n\n._3cWGE8-mGdiKpA1E5r0ogR ul {\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n  padding: 0;\n  margin: 0;\n}\n\n._8WdBWh9CPI8Iz17edRZBu {\n  display: inline;\n  margin-right: 12px !important;\n}\n\n\n._8WdBWh9CPI8Iz17edRZBu:nth-of-type(2n) {\n  margin-left: 3px;\n}\n\n._8WdBWh9CPI8Iz17edRZBu:nth-of-type(2n)::before {\n  content: \"|\";\n  display: inline-block;\n  width: 6px;\n  margin-left: -10px;\n  margin-right: 2px;\n}\n\n.O_P223JF8F2rpfiVJdx4c {\n  line-height: 24px;\n  margin-bottom: 12px !important;\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 16px;\n  position: relative;\n}\n\n._2FDP03CIE_-BUqQnzLWr9p {\n  background-color: white;\n\n}\n\n._37q1ZcqMNRZEQ-dOLvkQuE {\n  display: block;\n  position: relative;\n  padding-right: 30px;\n}\n\n._37q1ZcqMNRZEQ-dOLvkQuE > p {\n  word-break: break-word !important;\n  overflow-wrap: break-word !important;\n  word-wrap: break-word !important;\n  margin: 0;\n  overflow: hidden;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n}\n\n._2FDP03CIE_-BUqQnzLWr9p > button {\n  min-height: 16px;\n  padding: 0;\n  align-self: center;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22 aria-hidden%3D%22true%22 focusable%3D%22false%22 style%3D%22display%3A inline-block%3B height%3A 24px%3B vertical-align%3A middle%3B%22%3E%3Ccircle cx%3D%2212.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3Ccircle cy%3D%2212.001%22 cx%3D%224.0%22 r%3D%222.71%22%2F%3E%3Ccircle cx%3D%2220.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3C%2Fsvg%3E\");\n  position: absolute;\n  right: 0;\n  bottom: 2px;\n  min-width: 28px;\n  /* background: none; */\n  border: none;\n  color: inherit;\n  font: inherit;\n  cursor: pointer;\n  text-align: left;\n  line-height: 24px;\n  outline: none;\n  text-decoration: none;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-appearance: none;\n  border-radius: 24px;\n  display: inline-block;\n  text-align: center;\n  vertical-align: middle;\n  z-index: 10;\n  background-color: rgba(34, 34, 34, 0.15);\n  background-size: 80%;\n  opacity: 1;\n}\n\n\n", "",{"version":3,"sources":["webpack://./client/src/styles/ReviewItem.module.css"],"names":[],"mappings":"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","sourcesContent":[".reviewItem {\n  flex-grow: 1;\n  flex-basis: 100%;\n  max-width: 100%;\n  padding: 9px;\n  box-sizing: inherit;\n  /* height: 200px; */\n  /* outline: solid black;\n  outline-width: thin; */\n}\n\n.userDate {\n  margin-bottom: 6px !important;\n  display: flex !important;\n  align-items: center !important;\n  height: 30px;\n}\n\n.profileContainer {\n  height: 36px;\n  width: 36px;\n  margin-right: 12px !important;\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.profilePic {\n  height: 100% !important;\n  width: 100% !important;\n  border-radius: 50% !important;\n  overflow: hidden !important;\n  border: 0;\n  margin-right: 12px !important;\n}\n\n.usernameDate {\n  display: flex !important;\n  align-content: space-between !important;\n}\n\n.usernameDate > p {\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  box-sizing: border-box;\n}\n\n.anchor {\n  text-decoration: underline;\n  transition: opacity 200ms ease-out;\n  position: relative;\n  z-index: 0;\n  background: transparent;\n  margin-right: 6px !important;\n}\n\n.bodyContainer {\n  padding-left: 48px !important;\n  margin: 0;\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n}\n\n.innerBodyContainer {\n  display: flex;\n  justify-content: flex-start;\n  margin-bottom: 6px !important;\n}\n\n.innermostContainer {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n}\n\n.innerContainer {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n  flex: 3 1 0% !important;\n}\n\n.starsContainer {\n  margin-bottom: 6px !important;\n}\n\n.starsSpan {\n  margin-right: 6px !important;\n  display: inline-block !important;\n  box-sizing: border-box;\n}\n\n.starsSpan > span {\n  height: 18px;\n  width: 18px;\n  display: inline-block;\n  fill: currentColor;\n  vertical-align: middle;\n  bottom: 1px !important;\n  margin: 0px 1px;\n}\n\n.specType {\n  line-height: 18px;\n  font-size: 13px;\n  /* font-weight: 500; */\n  font-weight: bold;\n  letter-spacing: 0.1px;\n  display: inline-block;\n  margin: 0;\n  padding-right: 3px;\n}\n\n .specBody {\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  display: inline-block;\n  margin: 0;\n}\n\n.specsContainer {\n  box-sizing: border-box;\n  margin: 0;\n  margin-bottom: 12px !important;\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n}\n\n.specsContainer > ul {\n  list-style: none;\n  padding-left: 0;\n  overflow: hidden !important;\n  margin: 0;\n  box-sizing: border-box;\n  display: block;\n}\n\n.innerSpecsContainer {\n  width: 100% !important;\n  display: flex !important;\n  justify-content: flex-start !important;\n}\n\n\n.innerSpecsContainer ul {\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n  padding: 0;\n  margin: 0;\n}\n\n.listItem {\n  display: inline;\n  margin-right: 12px !important;\n}\n\n\n.listItem:nth-of-type(2n) {\n  margin-left: 3px;\n}\n\n.listItem:nth-of-type(2n)::before {\n  content: \"|\";\n  display: inline-block;\n  width: 6px;\n  margin-left: -10px;\n  margin-right: 2px;\n}\n\n.textBodyContainer {\n  line-height: 24px;\n  margin-bottom: 12px !important;\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 16px;\n  position: relative;\n}\n\n.textBody {\n  background-color: white;\n\n}\n\n.text {\n  display: block;\n  position: relative;\n  padding-right: 30px;\n}\n\n.text > p {\n  word-break: break-word !important;\n  overflow-wrap: break-word !important;\n  word-wrap: break-word !important;\n  margin: 0;\n  overflow: hidden;\n  display: -webkit-box;\n  -webkit-line-clamp: 3;\n  -webkit-box-orient: vertical;\n}\n\n.textBody > button {\n  min-height: 16px;\n  padding: 0;\n  align-self: center;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22 aria-hidden%3D%22true%22 focusable%3D%22false%22 style%3D%22display%3A inline-block%3B height%3A 24px%3B vertical-align%3A middle%3B%22%3E%3Ccircle cx%3D%2212.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3Ccircle cy%3D%2212.001%22 cx%3D%224.0%22 r%3D%222.71%22%2F%3E%3Ccircle cx%3D%2220.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3C%2Fsvg%3E\");\n  position: absolute;\n  right: 0;\n  bottom: 2px;\n  min-width: 28px;\n  /* background: none; */\n  border: none;\n  color: inherit;\n  font: inherit;\n  cursor: pointer;\n  text-align: left;\n  line-height: 24px;\n  outline: none;\n  text-decoration: none;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-appearance: none;\n  border-radius: 24px;\n  display: inline-block;\n  text-align: center;\n  vertical-align: middle;\n  z-index: 10;\n  background-color: rgba(34, 34, 34, 0.15);\n  background-size: 80%;\n  opacity: 1;\n}\n\n\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".uVlOy-pAds8EOx9jyU1_0 {\n  flex-grow: 1;\n  flex-basis: 100%;\n  max-width: 100%;\n  padding: 9px;\n  box-sizing: inherit;\n  /* height: 200px; */\n  /* outline: solid black;\n  outline-width: thin; */\n}\n\n._1aHN3fwVDlE9Rt4ErcmKaW {\n  margin-bottom: 6px !important;\n  display: flex !important;\n  align-items: center !important;\n  height: 30px;\n}\n\n._20lupIuldZEnkHVYUznmTK {\n  height: 36px;\n  width: 36px;\n  margin-right: 12px !important;\n  display: inline-block;\n  vertical-align: middle;\n}\n\n._3kkb-pOYzM0ahNVDWnxIm3 {\n  height: 100% !important;\n  width: 100% !important;\n  border-radius: 50% !important;\n  overflow: hidden !important;\n  border: 0;\n  margin-right: 12px !important;\n}\n\n._3ksRxVJYiFx0GgnWMDvAMQ {\n  display: flex !important;\n  align-content: space-between !important;\n}\n\n._3ksRxVJYiFx0GgnWMDvAMQ > p {\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  box-sizing: border-box;\n}\n\n._1r-RUqDshTIuP5uP1hUR9v {\n  text-decoration: underline;\n  transition: opacity 200ms ease-out;\n  position: relative;\n  z-index: 0;\n  background: transparent;\n  margin-right: 6px !important;\n}\n\n._3u5n1MjVSgjryXRO9SqHJ8 {\n  padding-left: 48px !important;\n  margin: 0;\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n}\n\n.ukrpqHF8Dc6tSLYucWjOl {\n  display: flex;\n  justify-content: flex-start;\n  margin-bottom: 6px !important;\n}\n\n._3d0oKmu3G-I6XCSRSxeKLP {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n}\n\n._2fCxTeh0VVrTNxWYuyvKwH {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n  flex: 3 1 0% !important;\n}\n\n._1Ry1ov85ovJ6RDZflWwV7I {\n  margin-bottom: 6px !important;\n}\n\n._3QILJRDNUebT-9-3dlWQOt {\n  margin-right: 6px !important;\n  display: inline-block !important;\n  box-sizing: border-box;\n}\n\n._3QILJRDNUebT-9-3dlWQOt > span {\n  height: 18px;\n  width: 18px;\n  display: inline-block;\n  fill: currentColor;\n  vertical-align: middle;\n  bottom: 1px !important;\n  margin: 0px 1px;\n}\n\n.GitzI3yblSx0Z3io8nSDx {\n  line-height: 18px;\n  font-size: 13px;\n  /* font-weight: 500; */\n  font-weight: bold;\n  letter-spacing: 0.1px;\n  display: inline-block;\n  margin: 0;\n  padding-right: 3px;\n}\n\n .R6_F2FwTBcZWiax5jeS6M {\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  display: inline-block;\n  margin: 0;\n}\n\n._37r1Rur9DEV0u-GmPbt09t {\n  box-sizing: border-box;\n  margin: 0;\n  margin-bottom: 12px !important;\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n}\n\n._37r1Rur9DEV0u-GmPbt09t > ul {\n  list-style: none;\n  padding-left: 0;\n  overflow: hidden !important;\n  margin: 0;\n  box-sizing: border-box;\n  display: block;\n}\n\n._3cWGE8-mGdiKpA1E5r0ogR {\n  width: 100% !important;\n  display: flex !important;\n  justify-content: flex-start !important;\n}\n\n\n._3cWGE8-mGdiKpA1E5r0ogR ul {\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n  padding: 0;\n  margin: 0;\n}\n\n._8WdBWh9CPI8Iz17edRZBu {\n  display: inline;\n  margin-right: 12px !important;\n}\n\n\n._8WdBWh9CPI8Iz17edRZBu:nth-of-type(2n) {\n  margin-left: 3px;\n}\n\n._8WdBWh9CPI8Iz17edRZBu:nth-of-type(2n)::before {\n  content: \"|\";\n  display: inline-block;\n  width: 6px;\n  margin-left: -10px;\n  margin-right: 2px;\n}\n\n.O_P223JF8F2rpfiVJdx4c {\n  line-height: 24px;\n  margin-bottom: 12px !important;\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 16px;\n  position: relative;\n}\n\n._2FDP03CIE_-BUqQnzLWr9p {\n  background-color: white;\n\n}\n\n._37q1ZcqMNRZEQ-dOLvkQuE {\n  display: block;\n  position: relative;\n  padding-right: 30px;\n}\n\n._37q1ZcqMNRZEQ-dOLvkQuE > p {\n  word-break: break-word !important;\n  overflow-wrap: break-word !important;\n  word-wrap: break-word !important;\n  margin: 0;\n  overflow: hidden;\n  display: -webkit-box;\n  /* -webkit-line-clamp: 3; */\n  -webkit-box-orient: vertical;\n}\n\n.hMEzybL8Dpq8_VB-FkyaT {\n  min-height: 16px;\n  padding: 0;\n  align-self: center;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22 aria-hidden%3D%22true%22 focusable%3D%22false%22 style%3D%22display%3A inline-block%3B height%3A 24px%3B vertical-align%3A middle%3B%22%3E%3Ccircle cx%3D%2212.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3Ccircle cy%3D%2212.001%22 cx%3D%224.0%22 r%3D%222.71%22%2F%3E%3Ccircle cx%3D%2220.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3C%2Fsvg%3E\");\n  position: absolute;\n  right: 0;\n  bottom: 2px;\n  min-width: 28px;\n  /* background: none; */\n  border: none;\n  color: inherit;\n  font: inherit;\n  cursor: pointer;\n  text-align: left;\n  line-height: 24px;\n  outline: none;\n  text-decoration: none;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-appearance: none;\n  border-radius: 24px;\n  display: inline-block;\n  text-align: center;\n  vertical-align: middle;\n  z-index: 10;\n  background-color: rgba(34, 34, 34, 0.15);\n  background-size: 80%;\n  opacity: 1;\n  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42), background-color 150ms ease-in;\n  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);\n}\n\n.hMEzybL8Dpq8_VB-FkyaT:hover {\n  transform: scale(1.3) perspective(1px);\n  background-color: darkgrey;\n}\n\n.G9Qz3Ck3bivjj3mdWOQKp {\n  -webkit-line-clamp: 3;\n}\n\n._2AFqnnK8A8-AE8NOMPt5sc {\n  display: none;\n}\n\n\n", "",{"version":3,"sources":["webpack://./client/src/styles/ReviewItem.module.css"],"names":[],"mappings":"AAAA;EACE,YAAY;EACZ,gBAAgB;EAChB,eAAe;EACf,YAAY;EACZ,mBAAmB;EACnB,mBAAmB;EACnB;wBACsB;AACxB;;AAEA;EACE,6BAA6B;EAC7B,wBAAwB;EACxB,8BAA8B;EAC9B,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,WAAW;EACX,6BAA6B;EAC7B,qBAAqB;EACrB,sBAAsB;AACxB;;AAEA;EACE,uBAAuB;EACvB,sBAAsB;EACtB,6BAA6B;EAC7B,2BAA2B;EAC3B,SAAS;EACT,6BAA6B;AAC/B;;AAEA;EACE,wBAAwB;EACxB,uCAAuC;AACzC;;AAEA;EACE,6HAA6H;EAC7H,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,sBAAsB;AACxB;;AAEA;EACE,0BAA0B;EAC1B,kCAAkC;EAClC,kBAAkB;EAClB,UAAU;EACV,uBAAuB;EACvB,4BAA4B;AAC9B;;AAEA;EACE,6BAA6B;EAC7B,SAAS;EACT,eAAe;EACf,gBAAgB;EAChB,mCAAmC;AACrC;;AAEA;EACE,aAAa;EACb,2BAA2B;EAC3B,6BAA6B;AAC/B;;AAEA;EACE,0BAA0B;EAC1B,yBAAyB;EACzB,6BAA6B;AAC/B;;AAEA;EACE,0BAA0B;EAC1B,yBAAyB;EACzB,6BAA6B;EAC7B,uBAAuB;AACzB;;AAEA;EACE,6BAA6B;AAC/B;;AAEA;EACE,4BAA4B;EAC5B,gCAAgC;EAChC,sBAAsB;AACxB;;AAEA;EACE,YAAY;EACZ,WAAW;EACX,qBAAqB;EACrB,kBAAkB;EAClB,sBAAsB;EACtB,sBAAsB;EACtB,eAAe;AACjB;;AAEA;EACE,iBAAiB;EACjB,eAAe;EACf,sBAAsB;EACtB,iBAAiB;EACjB,qBAAqB;EACrB,qBAAqB;EACrB,SAAS;EACT,kBAAkB;AACpB;;CAEC;EACC,mIAAmI;EACnI,gBAAgB;EAChB,eAAe;EACf,iBAAiB;EACjB,qBAAqB;EACrB,SAAS;AACX;;AAEA;EACE,sBAAsB;EACtB,SAAS;EACT,8BAA8B;EAC9B,6HAA6H;AAC/H;;AAEA;EACE,gBAAgB;EAChB,eAAe;EACf,2BAA2B;EAC3B,SAAS;EACT,sBAAsB;EACtB,cAAc;AAChB;;AAEA;EACE,sBAAsB;EACtB,wBAAwB;EACxB,sCAAsC;AACxC;;;AAGA;EACE,eAAe;EACf,gBAAgB;EAChB,mCAAmC;EACnC,UAAU;EACV,SAAS;AACX;;AAEA;EACE,eAAe;EACf,6BAA6B;AAC/B;;;AAGA;EACE,gBAAgB;AAClB;;AAEA;EACE,YAAY;EACZ,qBAAqB;EACrB,UAAU;EACV,kBAAkB;EAClB,iBAAiB;AACnB;;AAEA;EACE,iBAAiB;EACjB,8BAA8B;EAC9B,mIAAmI;EACnI,gBAAgB;EAChB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,uBAAuB;;AAEzB;;AAEA;EACE,cAAc;EACd,kBAAkB;EAClB,mBAAmB;AACrB;;AAEA;EACE,iCAAiC;EACjC,oCAAoC;EACpC,gCAAgC;EAChC,SAAS;EACT,gBAAgB;EAChB,oBAAoB;EACpB,2BAA2B;EAC3B,4BAA4B;AAC9B;;AAEA;EACE,gBAAgB;EAChB,UAAU;EACV,kBAAkB;EAClB,4BAA4B;EAC5B,2BAA2B;EAC3B,qdAAqd;EACrd,kBAAkB;EAClB,QAAQ;EACR,WAAW;EACX,eAAe;EACf,sBAAsB;EACtB,YAAY;EACZ,cAAc;EACd,aAAa;EACb,eAAe;EACf,gBAAgB;EAChB,iBAAiB;EACjB,aAAa;EACb,qBAAqB;EACrB,wCAAwC;EACxC,wBAAwB;EACxB,mBAAmB;EACnB,qBAAqB;EACrB,kBAAkB;EAClB,sBAAsB;EACtB,WAAW;EACX,wCAAwC;EACxC,oBAAoB;EACpB,UAAU;EACV,mGAAmG;EACnG,0CAA0C;AAC5C;;AAEA;EACE,sCAAsC;EACtC,0BAA0B;AAC5B;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,aAAa;AACf","sourcesContent":[".reviewItem {\n  flex-grow: 1;\n  flex-basis: 100%;\n  max-width: 100%;\n  padding: 9px;\n  box-sizing: inherit;\n  /* height: 200px; */\n  /* outline: solid black;\n  outline-width: thin; */\n}\n\n.userDate {\n  margin-bottom: 6px !important;\n  display: flex !important;\n  align-items: center !important;\n  height: 30px;\n}\n\n.profileContainer {\n  height: 36px;\n  width: 36px;\n  margin-right: 12px !important;\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.profilePic {\n  height: 100% !important;\n  width: 100% !important;\n  border-radius: 50% !important;\n  overflow: hidden !important;\n  border: 0;\n  margin-right: 12px !important;\n}\n\n.usernameDate {\n  display: flex !important;\n  align-content: space-between !important;\n}\n\n.usernameDate > p {\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  box-sizing: border-box;\n}\n\n.anchor {\n  text-decoration: underline;\n  transition: opacity 200ms ease-out;\n  position: relative;\n  z-index: 0;\n  background: transparent;\n  margin-right: 6px !important;\n}\n\n.bodyContainer {\n  padding-left: 48px !important;\n  margin: 0;\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n}\n\n.innerBodyContainer {\n  display: flex;\n  justify-content: flex-start;\n  margin-bottom: 6px !important;\n}\n\n.innermostContainer {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n}\n\n.innerContainer {\n  max-width: 100% !important;\n  min-width: 0px !important;\n  margin-right: 48px !important;\n  flex: 3 1 0% !important;\n}\n\n.starsContainer {\n  margin-bottom: 6px !important;\n}\n\n.starsSpan {\n  margin-right: 6px !important;\n  display: inline-block !important;\n  box-sizing: border-box;\n}\n\n.starsSpan > span {\n  height: 18px;\n  width: 18px;\n  display: inline-block;\n  fill: currentColor;\n  vertical-align: middle;\n  bottom: 1px !important;\n  margin: 0px 1px;\n}\n\n.specType {\n  line-height: 18px;\n  font-size: 13px;\n  /* font-weight: 500; */\n  font-weight: bold;\n  letter-spacing: 0.1px;\n  display: inline-block;\n  margin: 0;\n  padding-right: 3px;\n}\n\n .specBody {\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 13px;\n  line-height: 18px;\n  display: inline-block;\n  margin: 0;\n}\n\n.specsContainer {\n  box-sizing: border-box;\n  margin: 0;\n  margin-bottom: 12px !important;\n  font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif;\n}\n\n.specsContainer > ul {\n  list-style: none;\n  padding-left: 0;\n  overflow: hidden !important;\n  margin: 0;\n  box-sizing: border-box;\n  display: block;\n}\n\n.innerSpecsContainer {\n  width: 100% !important;\n  display: flex !important;\n  justify-content: flex-start !important;\n}\n\n\n.innerSpecsContainer ul {\n  font-size: 14px;\n  line-height: 1.4;\n  -webkit-font-smoothing: antialiased;\n  padding: 0;\n  margin: 0;\n}\n\n.listItem {\n  display: inline;\n  margin-right: 12px !important;\n}\n\n\n.listItem:nth-of-type(2n) {\n  margin-left: 3px;\n}\n\n.listItem:nth-of-type(2n)::before {\n  content: \"|\";\n  display: inline-block;\n  width: 6px;\n  margin-left: -10px;\n  margin-right: 2px;\n}\n\n.textBodyContainer {\n  line-height: 24px;\n  margin-bottom: 12px !important;\n  /* font-family: \"Graphik Webfont\",-apple-system,BlinkMacSystemFont,\"Roboto\",\"Droid Sans\",\"Segoe UI\",\"Helvetica\",Arial,sans-serif; */\n  font-weight: 300;\n  font-size: 16px;\n  position: relative;\n}\n\n.textBody {\n  background-color: white;\n\n}\n\n.text {\n  display: block;\n  position: relative;\n  padding-right: 30px;\n}\n\n.text > p {\n  word-break: break-word !important;\n  overflow-wrap: break-word !important;\n  word-wrap: break-word !important;\n  margin: 0;\n  overflow: hidden;\n  display: -webkit-box;\n  /* -webkit-line-clamp: 3; */\n  -webkit-box-orient: vertical;\n}\n\n.textButton {\n  min-height: 16px;\n  padding: 0;\n  align-self: center;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-image: url(\"data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22 aria-hidden%3D%22true%22 focusable%3D%22false%22 style%3D%22display%3A inline-block%3B height%3A 24px%3B vertical-align%3A middle%3B%22%3E%3Ccircle cx%3D%2212.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3Ccircle cy%3D%2212.001%22 cx%3D%224.0%22 r%3D%222.71%22%2F%3E%3Ccircle cx%3D%2220.0%22 cy%3D%2212.001%22 r%3D%222.71%22%2F%3E%3C%2Fsvg%3E\");\n  position: absolute;\n  right: 0;\n  bottom: 2px;\n  min-width: 28px;\n  /* background: none; */\n  border: none;\n  color: inherit;\n  font: inherit;\n  cursor: pointer;\n  text-align: left;\n  line-height: 24px;\n  outline: none;\n  text-decoration: none;\n  -webkit-tap-highlight-color: transparent;\n  -webkit-appearance: none;\n  border-radius: 24px;\n  display: inline-block;\n  text-align: center;\n  vertical-align: middle;\n  z-index: 10;\n  background-color: rgba(34, 34, 34, 0.15);\n  background-size: 80%;\n  opacity: 1;\n  transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42), background-color 150ms ease-in;\n  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);\n}\n\n.textButton:hover {\n  transform: scale(1.3) perspective(1px);\n  background-color: darkgrey;\n}\n\n.clamped {\n  -webkit-line-clamp: 3;\n}\n\n.hidden {\n  display: none;\n}\n\n\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"reviewItem": "uVlOy-pAds8EOx9jyU1_0",
@@ -1019,7 +1149,10 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"listItem": "_8WdBWh9CPI8Iz17edRZBu",
 	"textBodyContainer": "O_P223JF8F2rpfiVJdx4c",
 	"textBody": "_2FDP03CIE_-BUqQnzLWr9p",
-	"text": "_37q1ZcqMNRZEQ-dOLvkQuE"
+	"text": "_37q1ZcqMNRZEQ-dOLvkQuE",
+	"textButton": "hMEzybL8Dpq8_VB-FkyaT",
+	"clamped": "G9Qz3Ck3bivjj3mdWOQKp",
+	"hidden": "_2AFqnnK8A8-AE8NOMPt5sc"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
