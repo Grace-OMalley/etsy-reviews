@@ -17,7 +17,7 @@ describe('Rating component', () => {
 
   it('Should display correct reviews quantity', () => {
     const wrapper = shallow(<Rating rating={data.product.overallRating} product={data.product} />);
-    const reviewsQuantityHeader = wrapper.find('.header').text();git 
+    const reviewsQuantityHeader = wrapper.find('.header').text();
     expect(reviewsQuantityHeader).toBe(`${data.product.itemReviewsQuant} reviews`);
   })
 })

@@ -53,7 +53,6 @@ toggleMenu() {
     const conditionalClass = this.state.showMenu ? styles.menuOn : styles.menuOff;
     const toggleOff = this.state.showMenu === false ? styles.toggleOff : '';
 
-
     return (
       <div className={styles.tabsContainer} css="tabs-container">
         <div className={styles.tabsList} css="tabs-list">
@@ -78,8 +77,8 @@ toggleMenu() {
             </span>
           </button>
           <div className={`${styles.dropdown} ${conditionalClass} dropdown`} css="dropdown" ref={this.ref}>
-            <button onClick={this.selectOrder} name="Recommended" className={`${styles.dropdownItem} ${this.props.selected === 'Recommended' ? styles.selected : ''} dropdown`}>Recommended</button>
-            <button onClick={this.selectOrder} name="Newest" className={`${styles.dropdownItem} ${this.props.selected === 'Newest' ? styles.selected : ''} dropdown`}>Newest</button>
+            <button onClick={this.selectOrder} name="Recommended" className={`Recommended ${styles.dropdownItem} ${this.props.selected === 'Recommended' ? styles.selected : ''} dropdown`}>Recommended</button>
+            <button onClick={this.selectOrder} name="Newest" className={`Newest ${styles.dropdownItem} ${this.props.selected === 'Newest' ? styles.selected : ''} dropdown`}>Newest</button>
           </div>
         </div>
       </div>
