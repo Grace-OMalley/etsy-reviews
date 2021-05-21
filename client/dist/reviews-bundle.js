@@ -57,14 +57,11 @@ var PageNav = /*#__PURE__*/function (_React$Component) {
 
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
-  } // methods here
-
+  }
 
   _createClass(PageNav, [{
     key: "handleClick",
     value: function handleClick(event) {
-      //do stuff
-      // console.log('handle click called:', event.target);
       if (event.target.id) {
         this.props.changePage(Number(event.target.id));
       }
@@ -72,7 +69,7 @@ var PageNav = /*#__PURE__*/function (_React$Component) {
       if (event.target.classList.contains('right')) {
         this.props.changePage('right'); // console.log('right arrow');
       } else if (event.target.classList.contains('left')) {
-        this.props.changePage('left'); // console.log('left arrow');
+        this.props.changePage('left');
       }
     }
   }, {
@@ -87,13 +84,12 @@ var PageNav = /*#__PURE__*/function (_React$Component) {
         var middlePage = _this2.props.currentPage > 2 || _this2.props.currentPage < _this2.props.pageCount - 1;
 
         for (var i = 0; i < _this2.props.pagesCount; i++) {
-          var currentPage = _this2.props.currentPage === i + 1 ? _styles_PageNav_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selectedPage : ''; // console.log('i + 1:', i + 1 );
-          // console.log('current page:', this.props.currentPage);
-          // console.log('equal:', i + 1 === this.props.currentPage);
+          var currentPage = _this2.props.currentPage === i + 1 ? _styles_PageNav_module_css__WEBPACK_IMPORTED_MODULE_1__.default.selectedPage : '';
 
           if (!middlePage) {
             if (i < 2 || i === _this2.props.pagesCount - 1) {
               listItems.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+                key: i,
                 className: "".concat(_styles_PageNav_module_css__WEBPACK_IMPORTED_MODULE_1__.default.listItem)
               }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
                 className: "".concat(_styles_PageNav_module_css__WEBPACK_IMPORTED_MODULE_1__.default.anchorTag, " ").concat(currentPage),
@@ -105,6 +101,7 @@ var PageNav = /*#__PURE__*/function (_React$Component) {
           } else {
             if (i === 0 || i === _this2.props.currentPage - 1 || i === _this2.props.pagesCount - 1) {
               listItems.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+                key: i,
                 className: "".concat(_styles_PageNav_module_css__WEBPACK_IMPORTED_MODULE_1__.default.listItem)
               }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
                 className: "".concat(_styles_PageNav_module_css__WEBPACK_IMPORTED_MODULE_1__.default.anchorTag, " ").concat(currentPage),
@@ -234,35 +231,36 @@ var Rating = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       var renderStars = function renderStars() {
-        var solidStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-          className: "".concat(_styles_Rating_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starSpan, " solidStar")
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "3 3 18 18",
-          "aria-hidden": "true",
-          focusable: "false"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-          d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
-        })));
-        var hollowStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-          className: "".concat(_styles_Rating_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starSpan, " hollowStar")
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "3 3 18 18",
-          "aria-hidden": "true",
-          focusable: "false"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-          d: "M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"
-        })));
-        var rating = _this2.props.rating; // console.log('RATING:', rating);
-
+        // const solidStar = <span className={`${styles.starSpan} solidStar`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"></path></svg></span>
+        // const hollowStar = <span className={`${styles.starSpan} hollowStar`}><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"></path></svg></span>
+        var rating = _this2.props.rating;
         var stars = [];
 
         for (var i = 0; i < 5; i++) {
           if (i < rating) {
-            stars.push(solidStar);
+            stars.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+              key: i,
+              className: "".concat(_styles_Rating_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starSpan, " solidStar")
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "3 3 18 18",
+              "aria-hidden": "true",
+              focusable: "false"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+              d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+            }))));
           } else {
-            stars.push(hollowStar);
+            stars.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+              key: i,
+              className: "".concat(_styles_Rating_module_css__WEBPACK_IMPORTED_MODULE_1__.default.starSpan, " hollowStar")
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "3 3 18 18",
+              "aria-hidden": "true",
+              focusable: "false"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+              d: "M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"
+            }))));
           }
         }
 
@@ -391,36 +389,38 @@ var ReviewItem = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       var renderStars = function renderStars() {
-        var solidStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-          className: 'solidStar',
-          "data-rating": "0"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "3 3 18 18",
-          "aria-hidden": "true",
-          focusable: "false"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-          d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
-        })));
-        var hollowStar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
-          className: 'hollowStar',
-          "data-rating": "4"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
-          xmlns: "http://www.w3.org/2000/svg",
-          viewBox: "3 3 18 18",
-          "aria-hidden": "true",
-          focusable: "false"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-          d: "M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"
-        })));
+        // const solidStar = <span className={'solidStar'} data-rating="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"></path></svg></span>
+        // const hollowStar = <span className={'hollowStar'} data-rating="4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" aria-hidden="true" focusable="false"><path d="M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"></path></svg></span>
         var rating = _this2.props.review.starRating;
         var stars = [];
 
         for (var i = 0; i < 5; i++) {
           if (i < rating) {
-            stars.push(solidStar);
+            stars.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+              key: i,
+              className: 'solidStar',
+              "data-rating": "0"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "3 3 18 18",
+              "aria-hidden": "true",
+              focusable: "false"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+              d: "M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z"
+            }))));
           } else {
-            stars.push(hollowStar);
+            stars.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+              key: i,
+              className: 'hollowStar',
+              "data-rating": "4"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "3 3 18 18",
+              "aria-hidden": "true",
+              focusable: "false"
+            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+              d: "M12,6.47l1.21,2.84.41,1,1.05.09,3.07.27-2.32,2-.8.69.24,1,.69,3L12.9,15.79l-.9-.53-.9.53L8.45,17.38l.69-3,.24-1-.8-.69-2.32-2,3.07-.27,1.05-.09.41-1L12,6.47m.46-3.39h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4-.28-.88-6-.52L12.46,3.08Z"
+            }))));
           }
         }
 

@@ -13,11 +13,7 @@ class PageNav extends React.Component {
 
   }
 
-// methods here
-
 handleClick(event) {
-  //do stuff
-  // console.log('handle click called:', event.target);
 
   if (event.target.id) {
     this.props.changePage(Number(event.target.id));
@@ -28,8 +24,6 @@ handleClick(event) {
     // console.log('right arrow');
   } else if (event.target.classList.contains('left')) {
     this.props.changePage('left')
-
-    // console.log('left arrow');
   }
 
 }
@@ -43,13 +37,10 @@ handleClick(event) {
 
       for (let i = 0; i < this.props.pagesCount; i++) {
         const currentPage = this.props.currentPage === (i + 1) ? styles.selectedPage : ''
-        // console.log('i + 1:', i + 1 );
-        // console.log('current page:', this.props.currentPage);
-        // console.log('equal:', i + 1 === this.props.currentPage);
 
         if (!middlePage) {
           if (i < 2 || i === this.props.pagesCount - 1) {
-          listItems.push(<li className={`${styles.listItem}`}>
+          listItems.push(<li key={i} className={`${styles.listItem}`}>
           <a className={`${styles.anchorTag} ${currentPage}`} id={i + 1} onClick={this.handleClick} aria-current="page">
             {i + 1}
           </a>
@@ -57,7 +48,7 @@ handleClick(event) {
           }
         } else {
           if (i === 0 || i === this.props.currentPage - 1 || i === this.props.pagesCount - 1) {
-            listItems.push(<li className={`${styles.listItem}`}>
+            listItems.push(<li key={i} className={`${styles.listItem}`}>
             <a className={`${styles.anchorTag} ${currentPage}`} id={i + 1} onClick={this.handleClick} aria-current="page">
               {i + 1}
             </a>
