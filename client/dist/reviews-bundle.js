@@ -846,9 +846,13 @@ var App = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       var _this3 = this;
 
+      var numberPattern = /\d+/g;
+      var queryString = location.search.substring() || 1;
+      var parsedQueryString = queryString.match(numberPattern).join(); // console.log('query string:', queryString.slice(8));
+
       jquery__WEBPACK_IMPORTED_MODULE_7___default().ajax({
         type: 'GET',
-        url: '/reviews/' + 98,
+        url: '/reviews/' + parsedQueryString,
         success: function success(product) {
           console.log('successfully retrieved:', product);
 

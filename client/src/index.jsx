@@ -49,9 +49,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const numberPattern = /\d+/g;
+    const queryString = location.search.substring() || 1;
+    const parsedQueryString = queryString.match(numberPattern).join();
+    // console.log('query string:', queryString.slice(8));
     $.ajax({
       type: 'GET',
-      url: '/reviews/' + 98,
+      url: '/reviews/' + parsedQueryString,
       success: (product) => {
         console.log('successfully retrieved:', product);
         this.setState({
