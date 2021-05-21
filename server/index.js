@@ -12,12 +12,16 @@ app.get('/', (req, res) => {
   // res.send('Hello World!')
 })
 
-app.get('/findOne', async (req, res) => {
+app.get('/reviews/:itemId', async (req, res) => {
 console.log('GET received');
-let product = await database.getProduct();
+console.log('itemId:', req.params.itemId);
+console.log('REQ:', req.route);
+
+
+let product = await database.getProduct(req.params.itemId);
 // console.log('RETRIEVED product');
 let finalProduct = await helpers.sortDates(product);
-console.log('finalProduct:', finalProduct);
+// console.log('finalProduct:', finalProduct);
 
 res.status(201);
 res.send(finalProduct);
