@@ -141,6 +141,10 @@
   word-spacing: normal;
 }
 
+.toggleOff {
+  transition: background 250ms;
+}
+
 .toggleOff:hover {
   /* transition: background 0.3s cubic-bezier(0.345, 0.115, 0.135, 1.42); */
   background: rgba(34, 34, 34, 0.15);
@@ -184,7 +188,7 @@
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
-  transition: background-color 100ms ease-out;
+  transition: background 100ms ease-out;
   color: #222222;
   display: flex;
   flex-wrap: nowrap;
@@ -217,12 +221,27 @@
   height: 18px;
 }
 
+.dropdownItem:hover {
+  background: #EAEAEA;
+}
+
+.selected {
+  background-color: rgba(34, 34, 34, 0.05);
+}
+
+.selected:hover {
+  background-color: rgba(34, 34, 34, 0.05);
+}
+
 .selected::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23222222%22 d%3D%22M10.55 16.97L6.3 12.7a1 1 0 0 1 1.42-1.42l2.74 2.74 5.8-6.68a1 1 0 0 1 1.5 1.3l-7.2 8.32z%22%2F%3E%3C%2Fsvg%3E");
 }
 
 .menuOn {
   visibility: visible !important;
+  transform-origin: top left;
+  transform: scaleX(1) scaleY(1) perspective(1px);
+  transition: opacity 180ms ease-out,transform 180ms cubic-bezier(0.175, 0.885, 0.4, 1.1);
 }
 
 .menuOff {
@@ -231,6 +250,7 @@
 
 .triggerLabel {
   position: relative;
+  min-width: 150px;
   flex-grow: 1;
   margin: 0;
   font-size: 13px;
