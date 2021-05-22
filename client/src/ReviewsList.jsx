@@ -63,7 +63,7 @@ class ReviewsList extends React.Component {
         <div className={styles.gridBlock}>
             {/* --> ReviewItem component goes here */}
             {page.map((review, i) => {
-            return <ReviewItem review={review} key={i} dataKey={i + 1} />
+            return <ReviewItem review={review} key={i} dataKey={i + 1} clamp={true} />
           })}
         </div>
       </div>
