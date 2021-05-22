@@ -40,6 +40,11 @@ class App extends React.Component {
     }
   }
 
+  // refreshItems() {
+
+
+  // }
+
   changeOrder(order) {
     this.setState({
       reviewsOrder: order
