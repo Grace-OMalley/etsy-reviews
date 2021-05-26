@@ -80,7 +80,7 @@ const populateData = async () => {
   //...then move on to next product
 }
 
-// populateData();
+populateData();
 
 const getProduct = (id) => {
   // return Product.findOne({"reviews.10": {"$exists": true}});

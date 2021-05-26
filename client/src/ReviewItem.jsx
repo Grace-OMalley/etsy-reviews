@@ -26,10 +26,6 @@ class ReviewItem extends React.Component {
   }
 
   render() {
-    // console.log('reviewItem state:', this.state.clampText)
-    // console.log('reviewItem props:', this.props.clamp)
-    // console.log('STATE MATCHES PROP:', this.state.clampText === this.props.clamp);
-
     const renderStars = () => {
       let rating = this.props.review.starRating;
       const stars = [];
@@ -69,16 +65,12 @@ class ReviewItem extends React.Component {
                 <div className={styles.specsContainer} css="specs-container">
                   <div className={styles.innerSpecsContainer} css="inner-specs-container">
                     <ul>
-                      <li className={styles.listItem}>
-                        <p className={styles.specType}>SPEC TYPE: </p>
-                        <p className={styles.specBody}> SPECIFICATION_BODY</p>
-
-                      </li>
-                      <li className={styles.listItem}>
-                        <p className={styles.specType}>SPEC TYPE: </p>
-                        <p className={styles.specBody}> SPECIFICATION_BODY</p>
-
-                      </li>
+                      {this.props.review.productSpecs.map((spec, i) => (
+                        <li className={styles.listItem}>
+                        <p className={styles.specType}>Shirt Size: </p>
+                        <p className={styles.specBody}>{spec.Size}</p>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
