@@ -17,7 +17,8 @@ const productSchema = new mongoose.Schema({
     reviewDate: String,
     reviewBody: String,
     starRating: Number,
-    userProductImage: String
+    userProductImage: String,
+    productSpecs: Array
   }]
 }, {
   capped: true,
@@ -28,12 +29,12 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model('Product', productSchema);
 
 const populateData = async () => {
+  const shirtSizes = ['Exta Small', 'Small', 'Medium', 'Large', 'Extra Large'];
 
   for (let i = 0; i < 100; i++) {
 
     // create one product instance for each iteration
     let reviewsQuantity = Math.floor( Math.random() * 35);
-    console.log('reviews quantity:', reviewsQuantity);
 
     let product = new Product({
       itemId: i + 1,
@@ -47,6 +48,10 @@ const populateData = async () => {
     // create 0-20 reviews for each product
     for (let i = 0; i < reviewsQuantity; i++) {
       let rating = await  Math.floor((Math.random() * (5 - 1 + 1) + 1));
+      let s = Math.floor(Math.random() * ( (4 - 0 + 1) + 0));
+      console.log('s index:', s);
+      console.log('shirt size:', shirtSizes[s]);
+
       console.log('rating:', rating);
       reviewSum = reviewSum + rating;
 
@@ -57,12 +62,12 @@ const populateData = async () => {
         reviewDate: faker.date.between('2017-01-01', '2021-05-05'),
         reviewBody: faker.lorem.paragraphs(),
         starRating: rating,
-        userProductImage: 'img url goes here'
+        userProductImage: 'img url goes here',
+        productSpecs: [{Size: shirtSizes[s]}]
       }
       // push review to reviews array on product model
       product.reviews.push(review);
     }
-
     //assign overall rating
     let averageRating = Math.ceil(reviewSum / reviewsQuantity);
     console.log('average rating:', averageRating);
