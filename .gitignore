@@ -24,3 +24,7 @@ coverage
 client/dist/reviews-bundle.js
 client/dist/reviews-bundle.js.map
 
+# other
+.dockerignore
+.env
+

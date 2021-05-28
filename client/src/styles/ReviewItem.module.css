@@ -4,9 +4,6 @@
   max-width: 100%;
   padding: 9px;
   box-sizing: inherit;
-  /* height: 200px; */
-  /* outline: solid black;
-  outline-width: thin; */
 }
 
 .userDate {
@@ -114,7 +111,6 @@
 }
 
  .specBody {
-  /* font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif; */
   font-weight: 300;
   font-size: 13px;
   line-height: 18px;
@@ -144,7 +140,6 @@
   justify-content: flex-start !important;
 }
 
-
 .innerSpecsContainer ul {
   font-size: 14px;
   line-height: 1.4;
@@ -157,7 +152,6 @@
   display: inline;
   margin-right: 12px !important;
 }
-
 
 .listItem:nth-of-type(2n) {
   margin-left: 3px;
@@ -174,7 +168,6 @@
 .textBodyContainer {
   line-height: 24px;
   margin-bottom: 12px !important;
-  /* font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif; */
   font-weight: 300;
   font-size: 16px;
   position: relative;
@@ -182,7 +175,6 @@
 
 .textBody {
   background-color: white;
-
 }
 
 .text {

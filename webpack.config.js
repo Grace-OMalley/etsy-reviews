@@ -43,7 +43,10 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.css']
   },
-  mode: 'development'
+  devServer: {
+    contentBase: './dist'
+  },
+  mode: 'production'
 };
 
 
