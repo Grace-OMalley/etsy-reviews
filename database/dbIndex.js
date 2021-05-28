@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/reviews');
+mongoose.connect('mongodb://mongo/reviews');
 var faker = require('faker');
 
 
