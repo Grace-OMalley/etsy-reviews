@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/reviews');
 var faker = require('faker');
 
-
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -23,7 +22,6 @@ const productSchema = new mongoose.Schema({
 }, {
   capped: true,
   max: 100
-  // capping doesn't work...
 })
 
 const Product = mongoose.model('Product', productSchema);
@@ -49,10 +47,10 @@ const populateData = async () => {
     for (let i = 0; i < reviewsQuantity; i++) {
       let rating = await  Math.floor((Math.random() * (5 - 1 + 1) + 1));
       let s = Math.floor(Math.random() * ( (4 - 0 + 1) + 0));
-      console.log('s index:', s);
-      console.log('shirt size:', shirtSizes[s]);
+      // console.log('s index:', s);
+      // console.log('shirt size:', shirtSizes[s]);
 
-      console.log('rating:', rating);
+      // console.log('rating:', rating);
       reviewSum = reviewSum + rating;
 
       // cast data for current review
@@ -70,7 +68,7 @@ const populateData = async () => {
     }
     //assign overall rating
     let averageRating = Math.ceil(reviewSum / reviewsQuantity);
-    console.log('average rating:', averageRating);
+    // console.log('average rating:', averageRating);
     product.overallRating = averageRating;
 
     //save current product to DB
@@ -88,11 +86,9 @@ const populateData = async () => {
 populateData();
 
 const getProduct = (id) => {
-  // return Product.findOne({"reviews.10": {"$exists": true}});
   return Product.findOne({itemId: id});
 
 }
 
-// module.exports.generateData = generateData;
 module.exports.getProduct = getProduct;
 

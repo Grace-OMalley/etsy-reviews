@@ -23,5 +23,5 @@ res.send(product);
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`etsy-reviews app listening at http://75.101.208.114:${port}`)
 })
