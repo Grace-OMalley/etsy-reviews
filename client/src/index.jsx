@@ -18,7 +18,6 @@ class App extends React.Component {
       reviewsOrder: 'Recommended',
       currentPage: 1
     }
-    // bindings go here
     this.changeOrder = this.changeOrder.bind(this);
     this.changePage = this.changePage.bind(this);
   }
@@ -40,11 +39,6 @@ class App extends React.Component {
     }
   }
 
-  // refreshItems() {
-
-
-  // }
-
   changeOrder(order) {
     this.setState({
       reviewsOrder: order
@@ -55,7 +49,6 @@ class App extends React.Component {
 
   componentDidMount() {
     const queryString = location.search.slice(8) || 1;
-    // console.log('query string:', queryString.slice(8));
     $.ajax({
       type: 'GET',
       url: '/reviews/' + queryString,
@@ -96,8 +89,6 @@ class App extends React.Component {
                 {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} changePage={this.changePage} /> : null}
               </div>
             </div>
-
-            PHOTO BANK HERE
           </div>
 
         </div>
@@ -107,5 +98,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// ReactDOM.render(<App />, document.getElementById('app'));
