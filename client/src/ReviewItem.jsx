@@ -7,7 +7,6 @@ class ReviewItem extends React.Component {
     this.state = {
       clampText: true
     }
-    // bindings go here
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -85,11 +84,11 @@ class ReviewItem extends React.Component {
                 </div>
               </div>
 
-              <div className="user-img-container">
+              {/* <div className="user-img-container">
                 <button>
                   <img src={this.props.review.userProductImage} />
                 </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

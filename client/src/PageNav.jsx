@@ -8,32 +8,29 @@ class PageNav extends React.Component {
       pagesCount: Math.ceil(this.props.productList / 4),
       currentPage: this.props.currentPage
     }
-    // bindings go here
     this.handleClick = this.handleClick.bind(this);
-
   }
 
 handleClick(event) {
 
+  console.log('page count:', this.props.pagesCount);
+  console.log('current page:', this.props.currentPage);
   if (event.target.id) {
     this.props.changePage(Number(event.target.id));
   }
 
-  if (event.target.classList.contains('right')) {
+  if (event.target.classList.contains('right') && this.props.currentPage !== this.props.pagesCount) {
     this.props.changePage('right')
-    // console.log('right arrow');
   } else if (event.target.classList.contains('left')) {
     this.props.changePage('left')
   }
-
 }
 
-
   render() {
-    //page button function
     const listItems = [];
     const generatePageButtons = () => {
-      const middlePage = this.props.currentPage > 2 || this.props.currentPage < this.props.pageCount - 1;
+      const middlePage = this.props.currentPage > 2 && this.props.currentPage < this.props.pagesCount;
+      const lastPage = this.props.currentPage === this.props.pagesCount;
 
       for (let i = 0; i < this.props.pagesCount; i++) {
         const currentPage = this.props.currentPage === (i + 1) ? styles.selectedPage : ''
@@ -66,10 +63,14 @@ handleClick(event) {
           console.log('You are on a middle page. Congrats!');
         listItems.splice(2, 0, <li><p>...</p></li>);
         listItems.splice(4, 0, <li><p>...</p></li>);
+        } else if (lastPage) {
+          console.log('You are on the last page. SURRENDER.')
+          listItems.splice(3, 0, <li><p>...</p></li>);
         } else {
           listItems.splice(3, 0, <li><p>...</p></li>);
         }
 
+        // console.log('product list:', this.props.productList);
       }
     }
     generatePageButtons();
