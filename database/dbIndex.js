@@ -10,7 +10,8 @@ const productSchema = new mongoose.Schema({
   // productID: Number,
   itemId: Number,
   overallRating: Number,
-  itemReviewsQuant: String,
+  itemReviewsQuant: Number,
+  shopReviewsQuant: Number,
   reviews: [{
     username: String,
     userPic: String,
@@ -35,11 +36,14 @@ const populateData = async () => {
 
     // create one product instance for each iteration
     let reviewsQuantity = Math.floor( Math.random() * 35);
+    let shopReviewsQuantity = Math.floor( Math.random() * (200 - 50 + 1)) + 50;
+
 
     let product = new Product({
       itemId: i + 1,
       overallRating: 0,
       itemReviewsQuant: reviewsQuantity,
+      shopReviewsQuant: shopReviewsQuantity,
       reviews: []
     })
 
@@ -47,12 +51,12 @@ const populateData = async () => {
     // set up sub iteration for reviews
     // create 0-20 reviews for each product
     for (let i = 0; i < reviewsQuantity; i++) {
-      let rating = await  Math.floor((Math.random() * (5 - 1 + 1) + 1));
+      let rating = await Math.floor( Math.random() * (5 - 1 + 1)) + 1;
       let s = Math.floor(Math.random() * ( (4 - 0 + 1) + 0));
-      console.log('s index:', s);
-      console.log('shirt size:', shirtSizes[s]);
+      // console.log('s index:', s);
+      // console.log('shirt size:', shirtSizes[s]);
 
-      console.log('rating:', rating);
+      // console.log('rating:', rating);
       reviewSum = reviewSum + rating;
 
       // cast data for current review
@@ -71,6 +75,8 @@ const populateData = async () => {
     //assign overall rating
     let averageRating = Math.ceil(reviewSum / reviewsQuantity);
     console.log('average rating:', averageRating);
+    console.log('shop reviews count:', product.shopReviewsQuant);
+
     product.overallRating = averageRating;
 
     //save current product to DB
@@ -82,17 +88,15 @@ const populateData = async () => {
       }
     })
   }
-  //...then move on to next product
+  //...move on to next product
 }
 
 populateData();
 
 const getProduct = (id) => {
-  // return Product.findOne({"reviews.10": {"$exists": true}});
   return Product.findOne({itemId: id});
 
 }
 
-// module.exports.generateData = generateData;
 module.exports.getProduct = getProduct;
 

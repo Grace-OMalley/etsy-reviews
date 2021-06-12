@@ -64,7 +64,7 @@ toggleMenu() {
 
           <button name="shop" className={`${styles.shopReviews} ${this.state.tab === 'shop' ? styles.selectedTab : styles.offTab}`} onClick={this.handleReviewsClick}>
             Reviews for this shop
-            <span>200</span>
+            <span>{this.props.shopReviewsQuant}</span>
             </button>
       </div>
 

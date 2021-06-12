@@ -10,17 +10,13 @@
   margin-bottom: 36px !important;
   padding:0;
   display:flex;
-  /* justify-content:space-between; */
   width:50%;
-  /* gap:2px; */
 }
 
 .listItem {
   display:flex;
   align-items:center;
   justify-content:center;
-  /* background:red; */
-  /* width:100%; */
   width: 35px;
   overflow:hidden;
   cursor: pointer;
@@ -34,7 +30,6 @@
   background-color: rgba(34, 34, 34, 0.075);
   padding:10px;
   border-radius:50%;
-  /* color:#fff; */
   aspect-ratio:1;
   display:flex;
   align-items:center;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles/ReviewItem.module.css';
 
-class ReviewItem extends React.Component {
+class ReviewItem extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
