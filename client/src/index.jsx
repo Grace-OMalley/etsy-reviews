@@ -72,19 +72,16 @@ class App extends React.Component {
         <div className={styles.innerCol} css="padding-left-30px">
           {/* inner reviews col */}
           <div className={styles.reviewsPanel}>
-            {/* reviews panel--encompasses reviews AND photo bank */}
+            {/* reviews panel--encompasses reviews */}
             <div className="listing-page-reviews">
-              {/* <p>does NOT encompass photo bank</p> */}
               {this.state.currentProduct !== null && this.state.overallRating !== null ? <Rating product={this.state.currentProduct} rating={this.state.overallRating}/> : null }
               <div className="data-reviews">
-                {/* --> TABS COMPONENT GOES HERE
+                {/* --> TABS COMPONENT HERE
                 ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
-                {this.state.currentProduct !==null ? <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0}/> : null}
-
-                {/* --> REVIEWS LIST COMPONENT GOES HERE */}
+                {this.state.currentProduct !==null ? <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0} shopReviewsQuant={this.state.currentProduct ? this.state.currentProduct.shopReviewsQuant : 0}/> : null}
+                {/* --> REVIEWS LIST COMPONENT HERE */}
                 {this.state.currentProduct !== null ? <ReviewsList currentPage={this.state.currentPage} reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
               </div>
-
               <div className="nav-container">
                 {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} changePage={this.changePage} /> : null}
               </div>

@@ -102,7 +102,6 @@
 .specType {
   line-height: 18px;
   font-size: 13px;
-  /* font-weight: 500; */
   font-weight: bold;
   letter-spacing: 0.1px;
   display: inline-block;
@@ -190,7 +189,6 @@
   margin: 0;
   overflow: hidden;
   display: -webkit-box;
-  /* -webkit-line-clamp: 3; */
   -webkit-box-orient: vertical;
 }
 

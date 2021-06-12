@@ -7,7 +7,6 @@ import PageNav from './PageNav.jsx';
 import Tabs from './Tabs.jsx';
 import Rating from './Rating.jsx';
 import $ from 'jquery';
-import styles from "./styles/index.module.css";
 
 ReactDOM.render(<App />, document.getElementById('reviews'));
 

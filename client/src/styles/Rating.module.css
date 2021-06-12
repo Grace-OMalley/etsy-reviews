@@ -1,3 +1,8 @@
+@font-face {
+  font-family: freeEgypt;
+  src: url('../../dist/AftaSerifThin-Regular.otf');
+}
+
 .ratingContainer {
   margin: 0;
   box-sizing: border-box;
@@ -36,7 +41,8 @@
 }
 
 .header {
-  font-family: "Guardian-EgypTT", serif;
+  /* font-family: "Guardian-EgypTT", serif; */
+  font-family: "freeEgypt";
   margin-right: 12px !important;
   /* margin-bottom: 0; */
   font-size: 26px;
