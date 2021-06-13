@@ -4,9 +4,11 @@ const port = 1128
 const bodyParser = require('body-parser');
 const database = require('../database/dbIndex.js');
 const helpers = require('./helpers.js');
+const cors = require('cors');
 
 app.use(express.static('client/dist'))
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   // res.send('Hello World!')

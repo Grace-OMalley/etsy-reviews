@@ -56,13 +56,11 @@ handleClick(event) {
         listItems.unshift(<li onClick={this.handleClick} className={`${styles.listItem} ${'left'}`}><svg className={`${styles.myArrow} ${'left'}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path className="left" d="M6.7 11.3L6 12l.7.7 4 4c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4L9.8 13H17c.6 0 1-.4 1-1s-.4-1-1-1H9.8l2.3-2.3c.2-.2.3-.4.3-.7 0-.6-.4-1-1-1-.3 0-.5.1-.7.3l-4 4z"></path></svg></li>)
 
         if (middlePage) {
-          // console.log('You are on a middle page. Congrats!');
         listItems.splice(2, 0, <li><p>...</p></li>);
         listItems.splice(4, 0, <li><p>...</p></li>);
-        } else if (lastPage && this.props.pagesCount > 2) {
-          // console.log('You are on the last page. SURRENDER.');
+        } else if (lastPage && this.props.pagesCount > 3) {
           listItems.splice(-2, 0, <li><p>...</p></li>);
-        } else if (this.props.pagesCount > 2) {
+        } else if (this.props.pagesCount > 3) {
           listItems.splice(3, 0, <li><p>...</p></li>);
         }
       }
@@ -70,14 +68,11 @@ handleClick(event) {
     generatePageButtons();
 
     return (
-
       <nav className={styles.navContainer}>
         <ul className={styles.list}>
           {listItems}
         </ul>
-
       </nav>
-
     )
   }
 }

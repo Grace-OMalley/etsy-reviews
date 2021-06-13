@@ -17,24 +17,7 @@ const ReviewsList = (props) => {
     });
   }
 
-  //pagination logic below
-
-  //page 1
-  // (0, 4)
-
-  // page 2
-  // (5, 9)
-
-  //page 3
-  // (10, 14)
-
-  //page 4
-  // (15, 19)
-
-  //page 5
-  // (20, 24)
-
-  /// etc...
+  //pagination logic
 
   const first = (props.currentPage - 1) * 4;
   const last = first + 4;
@@ -49,7 +32,6 @@ const ReviewsList = (props) => {
       </div>
     </div>
   )
-
 }
 
 export default ReviewsList;

@@ -46,7 +46,8 @@ class ReviewItem extends React.PureComponent {
             <img src={this.props.review.userPic} className={styles.profilePic} css="profile-pic"/>
           </div>
           <div className={styles.usernameDate}css="username-date-container">
-            <p><a className={styles.anchor}>{this.props.review.username}</a>{this.props.review.reviewDate.slice(4, -42)}</p>
+            <p><a className={styles.anchor}>{this.props.review.username}</a>
+            {this.props.review.reviewDate.slice(4, 16)}</p>
           </div>
         </div>
 
@@ -83,7 +84,6 @@ class ReviewItem extends React.PureComponent {
                   </div>
                 </div>
               </div>
-
               {/* <div className="user-img-container">
                 <button>
                   <img src={this.props.review.userProductImage} />

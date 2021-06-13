@@ -19,7 +19,6 @@
   display: flex;
   align-items: center !important;
   box-sizing: border-box;
-  /* line-height: 1.4; */
   height: 35px;
 }
 
@@ -44,7 +43,6 @@
   /* font-family: "Guardian-EgypTT", serif; */
   font-family: "freeEgypt";
   margin-right: 12px !important;
-  /* margin-bottom: 0; */
   font-size: 26px;
   line-height: 42px;
   font-weight: 300;

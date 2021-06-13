@@ -56,7 +56,6 @@ toggleMenu() {
     return (
       <div className={styles.tabsContainer} css="tabs-container">
         <div className={styles.tabsList} css="tabs-list">
-          {/* This is the Tabs div! */}
           <button name="item" className={`${styles.itemReviews} ${this.state.tab === 'item' ? styles.selectedTab : styles.offTab}`} onClick={this.handleReviewsClick}>
             Reviews for this item
             <span>{this.props.itemReviewsQuant}</span>
