@@ -58,7 +58,7 @@ class App extends React.Component {
           itemId: product.itemId,
           currentProduct: product,
           overallRating: product.overallRating,
-          reviewsOrder: 'Recommended',
+          reviewsOrder: 'Recommended', // <--- this is the default reviews order.
           currentPage: 1
         })
       }
@@ -68,21 +68,19 @@ class App extends React.Component {
   render() {
     return (
       <div className={styles.outerCol}>
-        {/* Outermost col */}
         <div className={styles.innerCol} css="padding-left-30px">
-          {/* inner reviews col */}
           <div className={styles.reviewsPanel}>
-            {/* reviews panel--encompasses reviews */}
             <div className="listing-page-reviews">
-              {this.state.currentProduct !== null && this.state.overallRating !== null ? <Rating product={this.state.currentProduct} rating={this.state.overallRating}/> : null }
+              {this.state.currentProduct !== null && this.state.overallRating !== null ? <Rating product={this.state.currentProduct} rating={this.state.overallRating}/> : <Rating product={null} /> }
               <div className="data-reviews">
-                {/* --> TABS COMPONENT HERE
+                {/* --> TABS COMPONENT
                 ... includes reviews for this item tab and reviews for this shop tab + sort feature */}
-                {this.state.currentProduct !==null ? <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0} shopReviewsQuant={this.state.currentProduct ? this.state.currentProduct.shopReviewsQuant : 0}/> : null}
-                {/* --> REVIEWS LIST COMPONENT HERE */}
-                {this.state.currentProduct !== null ? <ReviewsList currentPage={this.state.currentPage} reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : null }
+                {this.state.currentProduct !==null ? <Tabs selectOrder={this.changeOrder} selected={this.state.reviewsOrder} itemReviewsQuant={this.state.currentProduct ? this.state.currentProduct.itemReviewsQuant : 0} shopReviewsQuant={this.state.currentProduct ? this.state.currentProduct.shopReviewsQuant : 0}/> : <Tabs />}
+                {/* --> REVIEWS LIST COMPONENT */}
+                {this.state.currentProduct !== null ? <ReviewsList currentPage={this.state.currentPage} reviews={this.state.currentProduct.reviews} reviewsOrder={this.state.reviewsOrder}/> : <div>No reviews</div> }
               </div>
               <div className="nav-container">
+                {/* {PAGE NAV COMPONENT} */}
                 {this.state.currentProduct ? <PageNav pagesCount={Math.ceil(this.state.currentProduct.reviews.length / 4)} currentPage={this.state.currentPage} changePage={this.changePage} /> : null}
               </div>
             </div>
