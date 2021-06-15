@@ -18,13 +18,10 @@ const productSchema = new mongoose.Schema({
     reviewDate: String,
     reviewBody: String,
     starRating: Number,
-    userProductImage: String,
     productSpecs: Array
   }]
 }, {
-  capped: true,
   max: 100
-  // capping doesn't work...
 })
 
 const Product = mongoose.model('Product', productSchema);
@@ -99,4 +96,3 @@ const getProduct = (id) => {
 }
 
 module.exports.getProduct = getProduct;
-
