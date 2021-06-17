@@ -8,14 +8,11 @@ class PageNav extends React.PureComponent {
   }
 
 handleClick(event) {
-
-  console.log('page count:', this.props.pagesCount);
-  console.log('current page:', this.props.currentPage);
-  if (event.target.id) {
+  if (event.target.id !== 'arrow') {
     this.props.changePage(Number(event.target.id));
   }
 
-  if (event.target.classList.contains('right') && this.props.currentPage !== this.props.pagesCount) {
+  if (event.target.classList.contains('right') && this.props.currentPage < this.props.pagesCount) {
     this.props.changePage('right')
   } else if (event.target.classList.contains('left')) {
     this.props.changePage('left')
