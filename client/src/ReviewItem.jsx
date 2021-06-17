@@ -17,13 +17,11 @@ class ReviewItem extends React.PureComponent {
       })
     }
   }
-
   handleClick() {
     this.setState({
       clampText: !this.state.clampText
     })
   }
-
   render() {
     const renderStars = () => {
       let rating = this.props.review.starRating;
