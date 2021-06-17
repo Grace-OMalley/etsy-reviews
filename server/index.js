@@ -20,8 +20,8 @@ console.log('itemId:', req.params.itemId);
 
 let product = await database.getProduct(req.params.itemId);
 
-res.status(201);
-res.send(product);
+// res.status(201);
+// res.send(product);
 })
 
 app.listen(port, () => {
