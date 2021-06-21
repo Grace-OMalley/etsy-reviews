@@ -7,26 +7,24 @@ const helpers = require('./helpers.js');
 const cors = require('cors');
 const shrinkRay = require('shrink-ray-current');
 
-
 app.use(shrinkRay());
 app.use(express.static('client/dist'))
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-  // res.send('Hello World!')
-})
-
 app.get('/reviews/:itemId', async (req, res) => {
-console.log('GET received');
-console.log('itemId:', req.params.itemId);
 
-let product = await database.getProduct(req.params.itemId);
+// let product = await database.getProduct(req.params.itemId);
+database.getProduct(req.params.itemId)
+  .then((product) => {
+    res.status(201).send(product)
+  })
 
-res.status(201);
-res.send(product);
+
+// res.status(201);
+// res.send(product);
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Etsy Reviews Service listening at http://localhost:${port}`);
 })

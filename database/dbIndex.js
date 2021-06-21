@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/reviews');
 var faker = require('faker');
-
-
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
 
 const productSchema = new mongoose.Schema({
-  // productID: Number,
   itemId: Number,
   overallRating: Number,
   itemReviewsQuant: Number,
@@ -35,7 +33,6 @@ const populateData = async () => {
     let reviewsQuantity = Math.floor( Math.random() * 35);
     let shopReviewsQuantity = Math.floor( Math.random() * (200 - 50 + 1)) + 50;
 
-
     let product = new Product({
       itemId: i + 1,
       overallRating: 0,
@@ -44,17 +41,13 @@ const populateData = async () => {
       reviews: []
     })
 
-    let reviewSum = 0;
-    // set up sub iteration for reviews
+    let reviewSum = 1;
+    // set up sub-iteration for reviews
     // create 0-20 reviews for each product
     for (let i = 0; i < reviewsQuantity; i++) {
       let rating = await Math.floor( Math.random() * (5 - 1 + 1)) + 1;
+      reviewSum += rating;
       let s = Math.floor(Math.random() * ( (4 - 0 + 1) + 0));
-      // console.log('s index:', s);
-      // console.log('shirt size:', shirtSizes[s]);
-
-      // console.log('rating:', rating);
-      reviewSum = reviewSum + rating;
 
       // cast data for current review
       let review = {
@@ -69,21 +62,18 @@ const populateData = async () => {
       // push review to reviews array on product model
       product.reviews.push(review);
     }
-    //assign overall rating
-    let averageRating = Math.ceil(reviewSum / reviewsQuantity);
-    console.log('average rating:', averageRating);
-    console.log('shop reviews count:', product.shopReviewsQuant);
-
+    //assign overall rating to product
+    let averageRating = Math.round(reviewSum / reviewsQuantity);
     product.overallRating = averageRating;
 
     //save current product to DB
-    product.save((error, doc) => {
-      if (error) {
-        return console.error(error);
+    product.save((err) => {
+      if (err) {
+        console.error(err);
       } else {
-        console.log('doc saved')
+        console.log('document saved.')
       }
-    })
+    });
   }
   //...move on to next product
 }
@@ -91,8 +81,13 @@ const populateData = async () => {
 populateData();
 
 const getProduct = (id) => {
-  return Product.findOne({itemId: id});
-
+  return Product.findOne({itemId: id}, (err, product) => {
+    if (product) {
+      return product;
+    } else {
+      return new Error ('No products found')
+    }
+  });
 }
 
 module.exports.getProduct = getProduct;

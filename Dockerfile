@@ -4,5 +4,5 @@ COPY package.json .
 RUN npm install
 COPY . .
 EXPOSE 1128
-CMD ["npm", "run", "server-dev"]
+CMD ["npm", "run", "server"]
 
