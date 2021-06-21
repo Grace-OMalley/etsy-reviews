@@ -15,8 +15,8 @@
 
 ## Usage
 
-> npm run build: Build webpack bundle with watch flag.
-> npm run server: start the nodemon server.
+1. npm run build: Build webpack bundle with watch flag.
+1. npm run server: start the nodemon server.
 
 ## Requirements
 
