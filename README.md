@@ -1,13 +1,11 @@
-# Project Name
+# Etsy Reviews Service
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Grace-OMalley/etsy-addtocart
+  - https://github.com/Grace-OMalley/etsy-imagesmain
 
 ## Table of Contents
 
@@ -17,7 +15,9 @@
 
 ## Usage
 
-> Some usage instructions
+- npm run build: Build webpack bundle with watch flag.
+- npm run server: Start the nodemon server.
+- npm run seed: Seed data to mongodb.
 
 ## Requirements
 
