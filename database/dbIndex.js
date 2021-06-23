@@ -81,8 +81,6 @@ const populateData = async () => {
   //...move on to next product
 }
 
-// populateData();
-
 const getProduct = (id) => {
   return Product.findOne({itemId: id});
 }
