@@ -11,7 +11,8 @@
     "build": "webpack --watch",
     "server": "nodemon server/index.js",
     "test": "jest",
-    "deploy-aws": "aws s3 sync client/dist/ s3://reviews-grace-omalley"
+    "deploy-aws": "aws s3 sync client/dist/ s3://reviews-grace-omalley",
+    "seed": "node database/seedData.js"
   },
   "dependencies": {
     "babel-jest": "^26.6.3",

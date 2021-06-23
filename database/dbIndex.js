@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/reviews');
-var faker = require('faker');
-const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
+const connectDB = () => {
+  mongoose.connect('mongodb://localhost/reviews');
+  const db = mongoose.connection;
+  db.on('error', console.error.bind(console, 'connection error:'));
+}
+
+const faker = require('faker');
 
 const productSchema = new mongoose.Schema({
   itemId: Number,
@@ -78,16 +81,13 @@ const populateData = async () => {
   //...move on to next product
 }
 
-populateData();
+// populateData();
 
 const getProduct = (id) => {
-  return Product.findOne({itemId: id}, (err, product) => {
-    if (product) {
-      return product;
-    } else {
-      return new Error ('No products found')
-    }
-  });
+  return Product.findOne({itemId: id});
 }
 
 module.exports.getProduct = getProduct;
+module.exports.connectDB = connectDB;
+module.exports.populateData = populateData;
+

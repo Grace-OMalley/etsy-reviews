@@ -3,15 +3,16 @@ import styles from './styles/ReviewsList.module.css';
 import ReviewItem from './ReviewItem.jsx';
 
 const ReviewsList = (props) => {
-  let reviews = props.reviews;
+  let reviews = props.reviews || [];
+
+  // reviews sorted according to reviewsOrder prop
 
   if (props.reviewsOrder === 'Newest') {
     reviews.sort((a, b) => {
     let dateA = new Date(a.reviewDate);
     let dateB = new Date(b.reviewDate);
     return dateB - dateA;
-  })
-  } else if (props.reviewsOrder === 'Recommended') {
+  }) } else if (props.reviewsOrder === 'Recommended') {
     reviews.sort((a, b) => {
       return b.starRating - a.starRating;
     });

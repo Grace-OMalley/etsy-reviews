@@ -5,24 +5,28 @@ const bodyParser = require('body-parser');
 const database = require('../database/dbIndex.js');
 const helpers = require('./helpers.js');
 const cors = require('cors');
-const shrinkRay = require('shrink-ray-current');
 
-app.use(shrinkRay());
+// const shrinkRay = require('shrink-ray-current');
+// app.use(shrinkRay());
 app.use(express.static('client/dist'))
 app.use(bodyParser.json());
 app.use(cors());
 
+database.connectDB();
+
 app.get('/reviews/:itemId', async (req, res) => {
-
-// let product = await database.getProduct(req.params.itemId);
-database.getProduct(req.params.itemId)
-  .then((product) => {
-    res.status(201).send(product)
-  })
-
-
-// res.status(201);
-// res.send(product);
+  database.getProduct(req.params.itemId)
+    .then((product) => {
+      if (product) {
+        res.status(201).send(product)
+      } else {
+        throw new Error('No Product Found');
+      }
+    })
+    .catch((err) => {
+      console.log('server log error:', err);
+      res.status(404).send(err);
+    })
 })
 
 app.listen(port, () => {

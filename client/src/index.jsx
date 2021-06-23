@@ -61,6 +61,9 @@ class App extends React.Component {
           reviewsOrder: 'Recommended', // <--- this is the default reviews order.
           currentPage: 1
         })
+      },
+      error: (err) => {
+        console.log(err.statusText);
       }
     })
   }
