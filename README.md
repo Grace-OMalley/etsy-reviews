@@ -17,6 +17,7 @@
 
 - npm run build: Build webpack bundle with watch flag.
 - npm run server: Start the nodemon server.
+- npm run seed: Seed data to mongodb.
 
 ## Requirements
 
