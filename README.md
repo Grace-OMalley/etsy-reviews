@@ -3,7 +3,6 @@
 > Project description
 
 ![](preview.png)
-![](scroll.gif)
 ![](sort.gif)
 
 ## Related Projects
