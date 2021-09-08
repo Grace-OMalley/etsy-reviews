@@ -3,6 +3,7 @@
 > Project description
 
 ![](preview.png)
+<img src="scroll.gif" width="800">
 ![](scroll.gif)
 ![](sort.gif)
 
