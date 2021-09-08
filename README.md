@@ -1,7 +1,9 @@
 # Etsy Reviews Service
 
 > Project description
-- ![](sort.gif)
+
+![](preview.png)
+![](sort.gif)
 
 ## Related Projects
 
