@@ -2,8 +2,8 @@
 
 > Project description
 
-![](scroll.gif)
 ![](sort.gif)
+![](scroll.gif)
 ![](page-turn.gif)
 ![](mobile.gif)
 
