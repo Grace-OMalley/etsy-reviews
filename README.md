@@ -5,7 +5,7 @@
 ![](preview.png)
 ![](scroll.gif)
 ![](sort.gif)
-![](page.gif)
+![](page turn.gif)
 ![](mobile.gif)
 
 
