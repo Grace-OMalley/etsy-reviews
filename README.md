@@ -2,7 +2,6 @@
 
 > Project description
 
-![](preview.png)
 ![](scroll.gif)
 ![](sort.gif)
 ![](page-turn.gif)
