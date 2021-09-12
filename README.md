@@ -3,7 +3,6 @@
 > Project description
 
 <img src="top.png" width="800">
-<img src="review-summary.png" width="800">
 <img src="sole-review.png" width="800">
 <img src="sort.gif" width="800">
 <img src="scroll.gif" width="800">
