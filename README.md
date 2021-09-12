@@ -2,7 +2,7 @@
 
 > Project description
 
-![](sole-review.png | width=800)
+<img src="sole-review.png" width="800">
 ![](sort.gif)
 ![](scroll.gif)
 ![](page-turn.gif)
