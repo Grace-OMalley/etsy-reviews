@@ -3,10 +3,14 @@
 > Project description
 
 <img src="sole-review.png" width="800">
-![](sort.gif)
+<img src="sort.gif" width="800">
+<img src="scroll.gif" width="800">
+<img src="page-turn.gif" width="800">
+<img src="mobile.gif" width="800">
+<!-- ![](sort.gif)
 ![](scroll.gif)
 ![](page-turn.gif)
-![](mobile.gif)
+![](mobile.gif) -->
 
 
 ## Related Projects
