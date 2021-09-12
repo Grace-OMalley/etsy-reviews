@@ -1,4 +1,4 @@
-# Etsy Reviews Service
+# Itsy Reviews Service
 
 > Project description
 
