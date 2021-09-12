@@ -7,12 +7,12 @@
 
 ## Table of Contents
 
-1. [Description](#Description)
+1. [Overview](#Overview)
 1. [Requirements](#Requirements)
 1. [Usage](#Usage)
 1. [Development](#development)
 
-## Description
+## Overview
 
 <img src="top.png" width="800">
 <img src="sole-review.png" width="800">
