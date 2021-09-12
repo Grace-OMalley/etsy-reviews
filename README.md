@@ -21,7 +21,7 @@ This is test text.
 <img src="sort.gif" width="800">
 <img src="scroll.gif" width="800">
 <img src="page-turn.gif" width="800">
-<img src="mobile.gif" width="800">
+<img src="mobile.gif" width="800" height="600">
 
 ## Usage
 
