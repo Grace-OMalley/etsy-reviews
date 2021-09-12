@@ -1,19 +1,5 @@
 # Itsy Reviews Service
 
-> Project description
-
-<img src="top.png" width="800">
-<img src="sole-review.png" width="800">
-<img src="sort.gif" width="800">
-<img src="scroll.gif" width="800">
-<img src="page-turn.gif" width="800">
-<img src="mobile.gif" width="800">
-<!-- ![](sort.gif)
-![](scroll.gif)
-![](page-turn.gif)
-![](mobile.gif) -->
-
-
 ## Related Projects
 
   - https://github.com/Grace-OMalley/etsy-addtocart
@@ -21,9 +7,19 @@
 
 ## Table of Contents
 
+1. [Description](#Description)
+1. [Requirements](#Requirements)
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
 1. [Development](#development)
+
+## Description
+
+<img src="top.png" width="800">
+<img src="sole-review.png" width="800">
+<img src="sort.gif" width="800">
+<img src="scroll.gif" width="800">
+<img src="page-turn.gif" width="800">
+<img src="mobile.gif" width="800">
 
 ## Usage
 
