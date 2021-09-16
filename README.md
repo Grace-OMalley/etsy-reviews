@@ -14,12 +14,12 @@
 
 ## Overview
 
-<img src="top.png" width="800">
-<img src="sole-review.png" width="800">
-<img src="sort.gif" width="800">
-<img src="scroll.gif" width="800">
-<img src="page-turn.gif" width="800">
-<img src="mobile.gif" width="800">
+<img src="top.png" width="600">
+<img src="sole-review.png" width="600">
+<img src="sort.gif" width="600">
+<img src="scroll.gif" width="600">
+<img src="page-turn.gif" width="600">
+<img src="mobile.gif" width="600">
 
 ## Usage
 
