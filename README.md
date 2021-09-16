@@ -36,13 +36,13 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Technologies
 
-1. React 
-1. Webpack
-1. Babel
-1. Express
-1. AWS EC2
-1. Babel
-1. Jest & Enzyme
-1. MongoDB & Mongoose 
-1. Node.js
+- React 
+- Webpack
+- Babel
+- Express
+- AWS EC2
+- Babel
+- Jest & Enzyme
+- MongoDB & Mongoose 
+- Node.js
 
