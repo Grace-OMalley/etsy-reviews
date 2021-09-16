@@ -14,6 +14,8 @@
 
 ## Overview
 
+Fullstack reviews microservice for shopping application closely modeled on Etsy.
+
 <!-- <img src="top.png" width="700"> -->
 <!-- <img src="sole-review.png" width="700"> -->
 <img src="sort.gif" width="700">
