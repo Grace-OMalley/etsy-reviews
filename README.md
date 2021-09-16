@@ -10,7 +10,7 @@
 1. [Overview](#Overview)
 1. [Requirements](#Requirements)
 1. [Usage](#Usage)
-1. [Development](#development)
+1. [Technologies](#technologies)
 
 ## Overview
 
@@ -34,14 +34,15 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Node 6.13.0
 - etc
 
-## Development
+## Technologies
 
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
+1. React 
+1. Webpack
+1. Babel
+1. Express
+1. AWS EC2
+1. Babel
+1. Jest & Enzyme
+1. MongoDB & Mongoose 
+1. Node.js
 
