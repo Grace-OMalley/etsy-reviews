@@ -14,8 +14,8 @@
 
 ## Overview
 
-<img src="top.png" width="700">
-<img src="sole-review.png" width="700">
+<!-- <img src="top.png" width="700"> -->
+<!-- <img src="sole-review.png" width="700"> -->
 <img src="sort.gif" width="700">
 <img src="scroll.gif" width="700">
 <img src="page-turn.gif" width="700">
